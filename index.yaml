@@ -3,7 +3,7 @@ entries:
   apm-hub:
   - apiVersion: v2
     appVersion: 0.0.17
-    created: "2022-03-03T14:32:37.560430883Z"
+    created: "2022-03-04T07:11:01.901082162Z"
     description: A Helm chart for apm-hub
     digest: ac3d348d4e6e96a9d868bbbc3601df6f84634ecd273ca7bec79a80dd42ae7b63
     name: apm-hub
@@ -11,4 +11,15 @@ entries:
     urls:
     - apm-hub-0.0.17.tgz
     version: 0.0.17
-generated: "2022-03-03T14:32:37.559805575Z"
+  config-db:
+  - apiVersion: v2
+    appVersion: 0.0.8
+    created: "2022-03-04T07:11:01.902257967Z"
+    description: A Helm chart for config-db
+    digest: 87977edb30f013a40bf074f42a9eac6a6b8d6bcf24e6e1bf4fb564c8dc106643
+    name: config-db
+    type: application
+    urls:
+    - config-db-0.0.8.tgz
+    version: 0.0.8
+generated: "2022-03-04T07:11:01.900354759Z"
