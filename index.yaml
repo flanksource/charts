@@ -3,7 +3,7 @@ entries:
   apm-hub:
   - apiVersion: v2
     appVersion: 0.0.17
-    created: "2022-03-04T07:11:01.901082162Z"
+    created: "2022-03-06T08:50:19.832349665Z"
     description: A Helm chart for apm-hub
     digest: ac3d348d4e6e96a9d868bbbc3601df6f84634ecd273ca7bec79a80dd42ae7b63
     name: apm-hub
@@ -11,10 +11,21 @@ entries:
     urls:
     - apm-hub-0.0.17.tgz
     version: 0.0.17
+  canary-checker:
+  - apiVersion: v2
+    appVersion: 0.38.77
+    created: "2022-03-06T08:50:19.835266113Z"
+    description: A Helm chart for canary-checker
+    digest: 62bd6eff64d408c62d7d0a3d9cdc0cb1dcea4ac77bbfc18bfa26a9d6d03872f8
+    name: canary-checker
+    type: application
+    urls:
+    - canary-checker-0.38.77.tgz
+    version: 0.38.77
   config-db:
   - apiVersion: v2
     appVersion: 0.0.8
-    created: "2022-03-04T07:11:01.902257967Z"
+    created: "2022-03-06T08:50:19.835730921Z"
     description: A Helm chart for config-db
     digest: 87977edb30f013a40bf074f42a9eac6a6b8d6bcf24e6e1bf4fb564c8dc106643
     name: config-db
@@ -22,4 +33,4 @@ entries:
     urls:
     - config-db-0.0.8.tgz
     version: 0.0.8
-generated: "2022-03-04T07:11:01.900354759Z"
+generated: "2022-03-06T08:50:19.831288547Z"
