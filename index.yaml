@@ -3,7 +3,7 @@ entries:
   apm-hub:
   - apiVersion: v2
     appVersion: 0.0.18
-    created: "2022-03-09T17:26:26.841137661Z"
+    created: "2022-03-10T10:38:58.906585059Z"
     description: A Helm chart for apm-hub
     digest: e91196aa2d88d542e5ce64134c4700bf21c7196193c936f67d912fedf851d446
     name: apm-hub
@@ -13,7 +13,7 @@ entries:
     version: 0.0.18
   - apiVersion: v2
     appVersion: 0.0.17
-    created: "2022-03-09T17:26:26.840789055Z"
+    created: "2022-03-10T10:38:58.905963831Z"
     description: A Helm chart for apm-hub
     digest: ac3d348d4e6e96a9d868bbbc3601df6f84634ecd273ca7bec79a80dd42ae7b63
     name: apm-hub
@@ -24,7 +24,7 @@ entries:
   canary-checker:
   - apiVersion: v2
     appVersion: 0.38.78
-    created: "2022-03-09T17:26:26.845606335Z"
+    created: "2022-03-10T10:38:58.91087435Z"
     description: A Helm chart for canary-checker
     digest: acb8f3f9ecf19efb0db5d45669663e384a3bcdd5a45df9ce74374196c348f3af
     name: canary-checker
@@ -34,7 +34,7 @@ entries:
     version: 0.38.78
   - apiVersion: v2
     appVersion: 0.38.77
-    created: "2022-03-09T17:26:26.843020492Z"
+    created: "2022-03-10T10:38:58.908499844Z"
     description: A Helm chart for canary-checker
     digest: 62bd6eff64d408c62d7d0a3d9cdc0cb1dcea4ac77bbfc18bfa26a9d6d03872f8
     name: canary-checker
@@ -44,8 +44,18 @@ entries:
     version: 0.38.77
   config-db:
   - apiVersion: v2
+    appVersion: 0.0.9
+    created: "2022-03-10T10:38:58.911617683Z"
+    description: A Helm chart for config-db
+    digest: e09d7327c4fa2d6278f597c42f2ea5d2b5fa3b8bdc1f73587c2e069c33df6cb6
+    name: config-db
+    type: application
+    urls:
+    - config-db-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
     appVersion: 0.0.8
-    created: "2022-03-09T17:26:26.846396948Z"
+    created: "2022-03-10T10:38:58.911241666Z"
     description: A Helm chart for config-db
     digest: 87977edb30f013a40bf074f42a9eac6a6b8d6bcf24e6e1bf4fb564c8dc106643
     name: config-db
@@ -53,4 +63,4 @@ entries:
     urls:
     - config-db-0.0.8.tgz
     version: 0.0.8
-generated: "2022-03-09T17:26:26.840297247Z"
+generated: "2022-03-10T10:38:58.905291301Z"
