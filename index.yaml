@@ -3,7 +3,7 @@ entries:
   apm-hub:
   - apiVersion: v2
     appVersion: 0.0.18
-    created: "2022-03-21T10:52:30.862089593Z"
+    created: "2022-03-23T07:13:05.877559299Z"
     description: A Helm chart for apm-hub
     digest: e91196aa2d88d542e5ce64134c4700bf21c7196193c936f67d912fedf851d446
     name: apm-hub
@@ -13,7 +13,7 @@ entries:
     version: 0.0.18
   - apiVersion: v2
     appVersion: 0.0.17
-    created: "2022-03-21T10:52:30.861656677Z"
+    created: "2022-03-23T07:13:05.877070596Z"
     description: A Helm chart for apm-hub
     digest: ac3d348d4e6e96a9d868bbbc3601df6f84634ecd273ca7bec79a80dd42ae7b63
     name: apm-hub
@@ -24,7 +24,7 @@ entries:
   canary-checker:
   - apiVersion: v2
     appVersion: 0.38.79
-    created: "2022-03-21T10:52:30.869881383Z"
+    created: "2022-03-23T07:13:05.886781346Z"
     description: a Kubernetes native, multi-tenant synthetic monitoring system
     digest: fefb97e934ceb551838e6c10dffdf702272a2b5970addc94bd198195e38b0f2a
     name: canary-checker
@@ -34,7 +34,7 @@ entries:
     version: 0.38.79
   - apiVersion: v2
     appVersion: 0.38.78
-    created: "2022-03-21T10:52:30.866895772Z"
+    created: "2022-03-23T07:13:05.883163827Z"
     description: A Helm chart for canary-checker
     digest: acb8f3f9ecf19efb0db5d45669663e384a3bcdd5a45df9ce74374196c348f3af
     name: canary-checker
@@ -44,7 +44,7 @@ entries:
     version: 0.38.78
   - apiVersion: v2
     appVersion: 0.38.77
-    created: "2022-03-21T10:52:30.864203172Z"
+    created: "2022-03-23T07:13:05.880761415Z"
     description: A Helm chart for canary-checker
     digest: 62bd6eff64d408c62d7d0a3d9cdc0cb1dcea4ac77bbfc18bfa26a9d6d03872f8
     name: canary-checker
@@ -54,8 +54,18 @@ entries:
     version: 0.38.77
   config-db:
   - apiVersion: v2
+    appVersion: 0.0.10
+    created: "2022-03-23T07:13:05.887712151Z"
+    description: A Helm chart for config-db
+    digest: 60a5f6a01d1a9fc1f03944122339b9ff752281d6ee055e63d0fec4c401ad46e9
+    name: config-db
+    type: application
+    urls:
+    - config-db-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
     appVersion: 0.0.9
-    created: "2022-03-21T10:52:30.870957424Z"
+    created: "2022-03-23T07:13:05.888604356Z"
     description: A Helm chart for config-db
     digest: e09d7327c4fa2d6278f597c42f2ea5d2b5fa3b8bdc1f73587c2e069c33df6cb6
     name: config-db
@@ -65,7 +75,7 @@ entries:
     version: 0.0.9
   - apiVersion: v2
     appVersion: 0.0.8
-    created: "2022-03-21T10:52:30.87059191Z"
+    created: "2022-03-23T07:13:05.888168653Z"
     description: A Helm chart for config-db
     digest: 87977edb30f013a40bf074f42a9eac6a6b8d6bcf24e6e1bf4fb564c8dc106643
     name: config-db
@@ -76,7 +86,7 @@ entries:
   incident-commander:
   - apiVersion: v2
     appVersion: 0.0.16
-    created: "2022-03-21T10:52:30.873963536Z"
+    created: "2022-03-23T07:13:05.892257274Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -94,4 +104,4 @@ entries:
     urls:
     - incident-commander-0.0.16.tgz
     version: 0.0.16
-generated: "2022-03-21T10:52:30.860828946Z"
+generated: "2022-03-23T07:13:05.876337992Z"
