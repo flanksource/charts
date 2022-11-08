@@ -2215,36 +2215,6 @@ entries:
     version: 1.0.114
   incident-commander:
   - apiVersion: v2
-    appVersion: 0.0.10
-    created: "2022-11-07T15:58:38.255691198Z"
-    dependencies:
-    - name: apm-hub
-      repository: https://flanksource.github.io/charts
-      version: '>= 0.0.20'
-    - name: config-db
-      repository: https://flanksource.github.io/charts
-      version: 0.0.41
-    - name: canary-checker
-      repository: https://flanksource.github.io/charts
-      version: 0.38.185
-    - condition: flanksource-ui.enabled
-      name: flanksource-ui
-      repository: https://flanksource.github.io/charts
-      version: 1.0.159
-    - import-values:
-      - child: secret
-        parent: kratossecret
-      name: kratos
-      repository: https://k8s.ory.sh/helm/charts
-      version: 0.25.3
-    description: A Helm chart for incident-commander
-    digest: 2f4ca79c7e2d907b0d168d4cc89fd65122a99353e34d0aa9ca4b7a31006018ff
-    name: incident-commander
-    type: application
-    urls:
-    - incident-commander-0.1.0.tgz
-    version: 0.1.0
-  - apiVersion: v2
     appVersion: 0.0.196
     created: "2022-11-07T16:09:33.252327829Z"
     dependencies:
