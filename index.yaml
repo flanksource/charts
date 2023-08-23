@@ -3,7 +3,7 @@ entries:
   apm-hub:
   - apiVersion: v2
     appVersion: 0.0.45
-    created: "2023-08-23T14:39:23.899218485Z"
+    created: "2023-08-23T14:54:22.847993755Z"
     description: A Helm chart for apm-hub
     digest: b2e9dff2cc680fe932c7a3a35d9417cd1f1a0a6b67db449945c385dd75f5867e
     name: apm-hub
@@ -13,7 +13,7 @@ entries:
     version: 0.0.45
   - apiVersion: v2
     appVersion: 0.0.44
-    created: "2023-08-23T14:39:23.89876327Z"
+    created: "2023-08-23T14:54:22.847479031Z"
     description: A Helm chart for apm-hub
     digest: ca99be424b8482f396d7d61cee0634fcae4c74144e0f4534f78d91e87e7b693e
     name: apm-hub
@@ -23,7 +23,7 @@ entries:
     version: 0.0.44
   - apiVersion: v2
     appVersion: 0.0.43
-    created: "2023-08-23T14:39:23.898309255Z"
+    created: "2023-08-23T14:54:22.846937906Z"
     description: A Helm chart for apm-hub
     digest: a8b6954cbf124f244d5580940fac08d81f5f60b49960617687ad025d8d59fe66
     name: apm-hub
@@ -33,7 +33,7 @@ entries:
     version: 0.0.43
   - apiVersion: v2
     appVersion: 0.0.42
-    created: "2023-08-23T14:39:23.89787424Z"
+    created: "2023-08-23T14:54:22.846382681Z"
     description: A Helm chart for apm-hub
     digest: f893d4893cd9151b67915494fabccb385191c6af6d6f96022ece58dce0a5d549
     name: apm-hub
@@ -43,7 +43,7 @@ entries:
     version: 0.0.42
   - apiVersion: v2
     appVersion: 0.0.41
-    created: "2023-08-23T14:39:23.897418925Z"
+    created: "2023-08-23T14:54:22.845824355Z"
     description: A Helm chart for apm-hub
     digest: 98ca7ac16228b8a2ff71a6aff744ff2187f88fc99de45aafb58234f643e193f1
     name: apm-hub
@@ -53,7 +53,7 @@ entries:
     version: 0.0.41
   - apiVersion: v2
     appVersion: 0.0.40
-    created: "2023-08-23T14:39:23.896916109Z"
+    created: "2023-08-23T14:54:22.845254329Z"
     description: A Helm chart for apm-hub
     digest: 2d02ebc5d5ac6a93bb5ccc0d41fcc7c8a219ae479774f04c42344c5ed9e2d4e6
     name: apm-hub
@@ -63,8 +63,27 @@ entries:
     version: 0.0.40
   canary-checker:
   - apiVersion: v2
+    appVersion: 1.0.40
+    created: "2023-08-23T14:54:22.921029022Z"
+    dependencies:
+    - condition: flanksource-ui.enabled
+      name: flanksource-ui
+      repository: https://flanksource.github.io/charts
+      version: 1.0.395
+    description: Kubernetes native, multi-tenant synthetic monitoring system
+    digest: ab9f97dd6f7fc53c10b60e7d681169de6bd204d78be4f6c1d8e6be1485d32c46
+    icon: https://github.com/flanksource/docs/blob/main/docs/canary-checker/images/canary-checker-icon.svg
+    maintainers:
+    - name: Flanksource
+      url: https://www.flanksource.com
+    name: canary-checker
+    type: application
+    urls:
+    - canary-checker-1.0.40.tgz
+    version: 1.0.40
+  - apiVersion: v2
     appVersion: 1.0.39
-    created: "2023-08-23T14:39:23.963887019Z"
+    created: "2023-08-23T14:54:22.915949588Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -83,7 +102,7 @@ entries:
     version: 1.0.39
   - apiVersion: v2
     appVersion: 1.0.38
-    created: "2023-08-23T14:39:23.96240167Z"
+    created: "2023-08-23T14:54:22.914166806Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -102,7 +121,7 @@ entries:
     version: 1.0.38
   - apiVersion: v2
     appVersion: 1.0.37
-    created: "2023-08-23T14:39:23.96086562Z"
+    created: "2023-08-23T14:54:22.912385224Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -121,7 +140,7 @@ entries:
     version: 1.0.37
   - apiVersion: v2
     appVersion: 1.0.36
-    created: "2023-08-23T14:39:23.958880554Z"
+    created: "2023-08-23T14:54:22.910546539Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -140,7 +159,7 @@ entries:
     version: 1.0.36
   - apiVersion: v2
     appVersion: 1.0.35
-    created: "2023-08-23T14:39:23.957053694Z"
+    created: "2023-08-23T14:54:22.907510899Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -159,7 +178,7 @@ entries:
     version: 1.0.35
   - apiVersion: v2
     appVersion: 1.0.33
-    created: "2023-08-23T14:39:23.955517743Z"
+    created: "2023-08-23T14:54:22.905703516Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -178,7 +197,7 @@ entries:
     version: 1.0.33
   - apiVersion: v2
     appVersion: 1.0.32
-    created: "2023-08-23T14:39:23.954012093Z"
+    created: "2023-08-23T14:54:22.90385053Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -197,7 +216,7 @@ entries:
     version: 1.0.32
   - apiVersion: v2
     appVersion: 1.0.31
-    created: "2023-08-23T14:39:23.95209203Z"
+    created: "2023-08-23T14:54:22.90210125Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -216,7 +235,7 @@ entries:
     version: 1.0.31
   - apiVersion: v2
     appVersion: 1.0.30
-    created: "2023-08-23T14:39:23.950041062Z"
+    created: "2023-08-23T14:54:22.900326868Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -235,7 +254,7 @@ entries:
     version: 1.0.30
   - apiVersion: v2
     appVersion: 1.0.29
-    created: "2023-08-23T14:39:23.946962461Z"
+    created: "2023-08-23T14:54:22.895897164Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -254,7 +273,7 @@ entries:
     version: 1.0.29
   - apiVersion: v2
     appVersion: 1.0.28
-    created: "2023-08-23T14:39:23.940527748Z"
+    created: "2023-08-23T14:54:22.894116882Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -273,7 +292,7 @@ entries:
     version: 1.0.28
   - apiVersion: v2
     appVersion: 1.0.27
-    created: "2023-08-23T14:39:23.938969297Z"
+    created: "2023-08-23T14:54:22.892311498Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -292,7 +311,7 @@ entries:
     version: 1.0.27
   - apiVersion: v2
     appVersion: 1.0.26
-    created: "2023-08-23T14:39:23.937430146Z"
+    created: "2023-08-23T14:54:22.890090396Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -311,7 +330,7 @@ entries:
     version: 1.0.26
   - apiVersion: v2
     appVersion: 1.0.25
-    created: "2023-08-23T14:39:23.935858994Z"
+    created: "2023-08-23T14:54:22.887655884Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -330,7 +349,7 @@ entries:
     version: 1.0.25
   - apiVersion: v2
     appVersion: 1.0.24
-    created: "2023-08-23T14:39:23.933851228Z"
+    created: "2023-08-23T14:54:22.885868201Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -349,7 +368,7 @@ entries:
     version: 1.0.24
   - apiVersion: v2
     appVersion: 1.0.23
-    created: "2023-08-23T14:39:23.93090203Z"
+    created: "2023-08-23T14:54:22.884053918Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -368,7 +387,7 @@ entries:
     version: 1.0.23
   - apiVersion: v2
     appVersion: 1.0.22
-    created: "2023-08-23T14:39:23.929334279Z"
+    created: "2023-08-23T14:54:22.882251335Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -387,7 +406,7 @@ entries:
     version: 1.0.22
   - apiVersion: v2
     appVersion: 1.0.21
-    created: "2023-08-23T14:39:23.927712725Z"
+    created: "2023-08-23T14:54:22.879306899Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -406,7 +425,7 @@ entries:
     version: 1.0.21
   - apiVersion: v2
     appVersion: 1.0.20
-    created: "2023-08-23T14:39:23.925640857Z"
+    created: "2023-08-23T14:54:22.877510516Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -425,7 +444,7 @@ entries:
     version: 1.0.20
   - apiVersion: v2
     appVersion: 1.0.19
-    created: "2023-08-23T14:39:23.921958135Z"
+    created: "2023-08-23T14:54:22.87390555Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -444,7 +463,7 @@ entries:
     version: 1.0.19
   - apiVersion: v2
     appVersion: 1.0.18
-    created: "2023-08-23T14:39:23.920393284Z"
+    created: "2023-08-23T14:54:22.871752551Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -463,7 +482,7 @@ entries:
     version: 1.0.18
   - apiVersion: v2
     appVersion: 1.0.17
-    created: "2023-08-23T14:39:23.918862733Z"
+    created: "2023-08-23T14:54:22.869292037Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -482,7 +501,7 @@ entries:
     version: 1.0.17
   - apiVersion: v2
     appVersion: 1.0.16
-    created: "2023-08-23T14:39:23.916328149Z"
+    created: "2023-08-23T14:54:22.86739235Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -501,7 +520,7 @@ entries:
     version: 1.0.16
   - apiVersion: v2
     appVersion: 1.0.15
-    created: "2023-08-23T14:39:23.914785598Z"
+    created: "2023-08-23T14:54:22.865620168Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -520,7 +539,7 @@ entries:
     version: 1.0.15
   - apiVersion: v2
     appVersion: 1.0.14
-    created: "2023-08-23T14:39:23.913248148Z"
+    created: "2023-08-23T14:54:22.863734281Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -539,7 +558,7 @@ entries:
     version: 1.0.14
   - apiVersion: v2
     appVersion: 1.0.13
-    created: "2023-08-23T14:39:23.911689396Z"
+    created: "2023-08-23T14:54:22.861097059Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -558,7 +577,7 @@ entries:
     version: 1.0.13
   - apiVersion: v2
     appVersion: 1.0.12
-    created: "2023-08-23T14:39:23.909471923Z"
+    created: "2023-08-23T14:54:22.858862256Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -577,7 +596,7 @@ entries:
     version: 1.0.12
   - apiVersion: v2
     appVersion: 1.0.11
-    created: "2023-08-23T14:39:23.907234349Z"
+    created: "2023-08-23T14:54:22.857062773Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -596,7 +615,7 @@ entries:
     version: 1.0.11
   - apiVersion: v2
     appVersion: 1.0.10
-    created: "2023-08-23T14:39:23.905671898Z"
+    created: "2023-08-23T14:54:22.85525349Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -615,7 +634,7 @@ entries:
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.9
-    created: "2023-08-23T14:39:23.97390235Z"
+    created: "2023-08-23T14:54:22.930805773Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -634,7 +653,7 @@ entries:
     version: 1.0.9
   - apiVersion: v2
     appVersion: 1.0.8
-    created: "2023-08-23T14:39:23.9723997Z"
+    created: "2023-08-23T14:54:22.928301858Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -653,7 +672,7 @@ entries:
     version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.7
-    created: "2023-08-23T14:39:23.970917151Z"
+    created: "2023-08-23T14:54:22.92639807Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -672,7 +691,7 @@ entries:
     version: 1.0.7
   - apiVersion: v2
     appVersion: 1.0.6
-    created: "2023-08-23T14:39:23.969379201Z"
+    created: "2023-08-23T14:54:22.924630088Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -691,7 +710,7 @@ entries:
     version: 1.0.6
   - apiVersion: v2
     appVersion: 1.0.5
-    created: "2023-08-23T14:39:23.966905719Z"
+    created: "2023-08-23T14:54:22.922805104Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -710,7 +729,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.4
-    created: "2023-08-23T14:39:23.965404469Z"
+    created: "2023-08-23T14:54:22.918467204Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -729,7 +748,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2023-08-23T14:39:23.948485211Z"
+    created: "2023-08-23T14:54:22.898097565Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -748,7 +767,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2023-08-23T14:39:23.923513987Z"
+    created: "2023-08-23T14:54:22.875677431Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -767,7 +786,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2023-08-23T14:39:23.904078945Z"
+    created: "2023-08-23T14:54:22.853248097Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -786,7 +805,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-08-23T14:39:23.902508093Z"
+    created: "2023-08-23T14:54:22.849909743Z"
     dependencies:
     - condition: flanksource-ui.enabled
       name: flanksource-ui
@@ -806,7 +825,7 @@ entries:
   config-db:
   - apiVersion: v2
     appVersion: 0.0.135
-    created: "2023-08-23T14:39:23.983872779Z"
+    created: "2023-08-23T14:54:22.943149242Z"
     description: A Helm chart for config-db
     digest: 0bd681516e81e936044fd050b435a1db6ba6b5b23bacff37d7f7e4f071a88de8
     name: config-db
@@ -816,7 +835,7 @@ entries:
     version: 0.0.135
   - apiVersion: v2
     appVersion: 0.0.134
-    created: "2023-08-23T14:39:23.982930948Z"
+    created: "2023-08-23T14:54:22.942481812Z"
     description: A Helm chart for config-db
     digest: 6625c835f3be9976d2c78aceda04093203ffc38fdfbaf8fcbea393fadb7ceb6a
     name: config-db
@@ -826,7 +845,7 @@ entries:
     version: 0.0.134
   - apiVersion: v2
     appVersion: 0.0.133
-    created: "2023-08-23T14:39:23.982366629Z"
+    created: "2023-08-23T14:54:22.941347159Z"
     description: A Helm chart for config-db
     digest: 0a4b200a10eafd5eaaea39e4b152b6adaf7e5126c29a6373736b9c78ccae54d6
     name: config-db
@@ -836,7 +855,7 @@ entries:
     version: 0.0.133
   - apiVersion: v2
     appVersion: 0.0.132
-    created: "2023-08-23T14:39:23.981831112Z"
+    created: "2023-08-23T14:54:22.940508721Z"
     description: A Helm chart for config-db
     digest: c525062e0e1785b87341bc35a111311dd6f67cb9ac04cbd8c959d43a01c521bd
     name: config-db
@@ -846,7 +865,7 @@ entries:
     version: 0.0.132
   - apiVersion: v2
     appVersion: 0.0.131
-    created: "2023-08-23T14:39:23.981286694Z"
+    created: "2023-08-23T14:54:22.939267163Z"
     description: A Helm chart for config-db
     digest: 4bb2356aedc80cc8ca8bb15e429dc476e17ae92721765af2783064e26b755c66
     name: config-db
@@ -856,7 +875,7 @@ entries:
     version: 0.0.131
   - apiVersion: v2
     appVersion: 0.0.130
-    created: "2023-08-23T14:39:23.980748376Z"
+    created: "2023-08-23T14:54:22.93855163Z"
     description: A Helm chart for config-db
     digest: f380e985ee6f59bdef360c008ac4652afdfcb786fda412b25a7d7bc048370cd2
     name: config-db
@@ -866,7 +885,7 @@ entries:
     version: 0.0.130
   - apiVersion: v2
     appVersion: 0.0.129
-    created: "2023-08-23T14:39:23.980186757Z"
+    created: "2023-08-23T14:54:22.937905801Z"
     description: A Helm chart for config-db
     digest: b1df7171640b17502c7287abab4da9f30a510534e05a82feb2bda607fa840101
     name: config-db
@@ -876,7 +895,7 @@ entries:
     version: 0.0.129
   - apiVersion: v2
     appVersion: 0.0.128
-    created: "2023-08-23T14:39:23.979643839Z"
+    created: "2023-08-23T14:54:22.937265971Z"
     description: A Helm chart for config-db
     digest: 4eff16668f32b9f402c3a57f8a019739aeebe1365e76a39e6a8d9bfd9cc73d35
     name: config-db
@@ -886,7 +905,7 @@ entries:
     version: 0.0.128
   - apiVersion: v2
     appVersion: 0.0.127
-    created: "2023-08-23T14:39:23.979097321Z"
+    created: "2023-08-23T14:54:22.93659974Z"
     description: A Helm chart for config-db
     digest: 9f7a763e7b3d3650d7e01e305c75c98f36db87ad396b035a0ba74856917094eb
     name: config-db
@@ -896,7 +915,7 @@ entries:
     version: 0.0.127
   - apiVersion: v2
     appVersion: 0.0.126
-    created: "2023-08-23T14:39:23.978559004Z"
+    created: "2023-08-23T14:54:22.935900608Z"
     description: A Helm chart for config-db
     digest: c80373a2112e17afd0abe15aa9dff4be63a14f3009aecea9a532158761804952
     name: config-db
@@ -906,7 +925,7 @@ entries:
     version: 0.0.126
   - apiVersion: v2
     appVersion: 0.0.125
-    created: "2023-08-23T14:39:23.978005185Z"
+    created: "2023-08-23T14:54:22.935185875Z"
     description: A Helm chart for config-db
     digest: e38ced21cc298718e49fe8d3a28376fc7affcf4b435f986fb36b2536f6c84495
     name: config-db
@@ -916,7 +935,7 @@ entries:
     version: 0.0.125
   - apiVersion: v2
     appVersion: 0.0.124
-    created: "2023-08-23T14:39:23.977456867Z"
+    created: "2023-08-23T14:54:22.934534345Z"
     description: A Helm chart for config-db
     digest: 021dbb223c07635e0f7815d9b6d43846d0d4880e9888f6874f893a26b23b2d2a
     name: config-db
@@ -926,7 +945,7 @@ entries:
     version: 0.0.124
   - apiVersion: v2
     appVersion: 0.0.123
-    created: "2023-08-23T14:39:23.97663424Z"
+    created: "2023-08-23T14:54:22.933910316Z"
     description: A Helm chart for config-db
     digest: b77ecde7826ce6ddae2d53f15cac288b5647f43f3d3f9161daf3fb3336cbe358
     name: config-db
@@ -936,7 +955,7 @@ entries:
     version: 0.0.123
   - apiVersion: v2
     appVersion: 0.0.122
-    created: "2023-08-23T14:39:23.975926117Z"
+    created: "2023-08-23T14:54:22.933283387Z"
     description: A Helm chart for config-db
     digest: ec00d29492fd6671d37d0fb81016c4a75cf3ba786dc52192d64446742238e7cd
     name: config-db
@@ -946,7 +965,7 @@ entries:
     version: 0.0.122
   - apiVersion: v2
     appVersion: 0.0.121
-    created: "2023-08-23T14:39:23.974969385Z"
+    created: "2023-08-23T14:54:22.932655658Z"
     description: A Helm chart for config-db
     digest: 11aca6a39e3c969bead0b846fb685c4b617425bce6c854f36e27c3217a2909f5
     name: config-db
@@ -956,7 +975,7 @@ entries:
     version: 0.0.121
   - apiVersion: v2
     appVersion: 0.0.120
-    created: "2023-08-23T14:39:23.974431267Z"
+    created: "2023-08-23T14:54:22.931982627Z"
     description: A Helm chart for config-db
     digest: 2e4268b88254f3ec0749ac684eb88ca9f0000b6be05ba28203b5921d479cd8a2
     name: config-db
@@ -967,7 +986,7 @@ entries:
   flanksource-ui:
   - apiVersion: v2
     appVersion: 1.0.405
-    created: "2023-08-23T14:39:24.010223449Z"
+    created: "2023-08-23T14:54:22.974803502Z"
     description: A Helm chart for flanksource-ui
     digest: 096b6d7d2fd354be25186d92ddd977ff69f8374fcfa249d4981cb2f051cdeed9
     name: flanksource-ui
@@ -977,7 +996,7 @@ entries:
     version: 1.0.405
   - apiVersion: v2
     appVersion: 1.0.404
-    created: "2023-08-23T14:39:24.009795235Z"
+    created: "2023-08-23T14:54:22.974318179Z"
     description: A Helm chart for flanksource-ui
     digest: 4fcbce37d3e1d4e94770a577441a1aaa7b6924b7ee08cad75a6ceb364b7ea188
     name: flanksource-ui
@@ -987,7 +1006,7 @@ entries:
     version: 1.0.404
   - apiVersion: v2
     appVersion: 1.0.403
-    created: "2023-08-23T14:39:24.009151813Z"
+    created: "2023-08-23T14:54:22.973829957Z"
     description: A Helm chart for flanksource-ui
     digest: f3873292aaf63c1b81708965f68e057b91dc930870a3fe94122bd9ee4a65847a
     name: flanksource-ui
@@ -997,7 +1016,7 @@ entries:
     version: 1.0.403
   - apiVersion: v2
     appVersion: 1.0.402
-    created: "2023-08-23T14:39:24.008593295Z"
+    created: "2023-08-23T14:54:22.973331934Z"
     description: A Helm chart for flanksource-ui
     digest: f4b384fcfcfae312b2ef92867ba26c6103c7b382e861dd08af613f7dc8ed16c4
     name: flanksource-ui
@@ -1007,7 +1026,7 @@ entries:
     version: 1.0.402
   - apiVersion: v2
     appVersion: 1.0.401
-    created: "2023-08-23T14:39:24.008007576Z"
+    created: "2023-08-23T14:54:22.972840311Z"
     description: A Helm chart for flanksource-ui
     digest: 5f31a2fcedfaef9e75663281e74b4fc2dcf12430c4a3172f36f36470fdbb4b3a
     name: flanksource-ui
@@ -1017,7 +1036,7 @@ entries:
     version: 1.0.401
   - apiVersion: v2
     appVersion: 1.0.400
-    created: "2023-08-23T14:39:24.007211249Z"
+    created: "2023-08-23T14:54:22.972323087Z"
     description: A Helm chart for flanksource-ui
     digest: a88a4412e3586aff4141f2df2fe9185d01b20765264b976a2b79dd2a61d05ae5
     name: flanksource-ui
@@ -1027,7 +1046,7 @@ entries:
     version: 1.0.400
   - apiVersion: v2
     appVersion: 1.0.399
-    created: "2023-08-23T14:39:24.006801236Z"
+    created: "2023-08-23T14:54:22.971778962Z"
     description: A Helm chart for flanksource-ui
     digest: 829d0b0ab741a7e3f0a991507336012ed7419fb2d6453da9aef9d5c98a6cd292
     name: flanksource-ui
@@ -1037,7 +1056,7 @@ entries:
     version: 1.0.399
   - apiVersion: v2
     appVersion: 1.0.398
-    created: "2023-08-23T14:39:24.006390622Z"
+    created: "2023-08-23T14:54:22.971280339Z"
     description: A Helm chart for flanksource-ui
     digest: e0ecb110821669c857d2e23a8a21b97079c6a3693f99ab40abab29e8a7d517b8
     name: flanksource-ui
@@ -1047,7 +1066,7 @@ entries:
     version: 1.0.398
   - apiVersion: v2
     appVersion: 1.0.397
-    created: "2023-08-23T14:39:24.005987109Z"
+    created: "2023-08-23T14:54:22.970791817Z"
     description: A Helm chart for flanksource-ui
     digest: 8409f5845a044b9271bf68dc68c8c2ff315fd5b91a3e5ec16366d46d855f16f0
     name: flanksource-ui
@@ -1057,7 +1076,7 @@ entries:
     version: 1.0.397
   - apiVersion: v2
     appVersion: 1.0.396
-    created: "2023-08-23T14:39:24.005576495Z"
+    created: "2023-08-23T14:54:22.970288694Z"
     description: A Helm chart for flanksource-ui
     digest: 655deda50c120835ab38dbd0f2238f65da87c5482e960262f30c29284151cc49
     name: flanksource-ui
@@ -1067,7 +1086,7 @@ entries:
     version: 1.0.396
   - apiVersion: v2
     appVersion: 1.0.395
-    created: "2023-08-23T14:39:24.005169982Z"
+    created: "2023-08-23T14:54:22.969796171Z"
     description: A Helm chart for flanksource-ui
     digest: 0b657452d370b8104900e49701768663c4cce60515b48bc0ab6b3360b9825c70
     name: flanksource-ui
@@ -1077,7 +1096,7 @@ entries:
     version: 1.0.395
   - apiVersion: v2
     appVersion: 1.0.394
-    created: "2023-08-23T14:39:24.004764269Z"
+    created: "2023-08-23T14:54:22.969287747Z"
     description: A Helm chart for flanksource-ui
     digest: 93c4329b3d24feab009a676a4c28b46f350198e9565c488123063bfe7f72b706
     name: flanksource-ui
@@ -1087,7 +1106,7 @@ entries:
     version: 1.0.394
   - apiVersion: v2
     appVersion: 1.0.393
-    created: "2023-08-23T14:39:24.004344955Z"
+    created: "2023-08-23T14:54:22.968777224Z"
     description: A Helm chart for flanksource-ui
     digest: 3be18e9989a72675cb1584a4ca1e607d752008f0b480dfa13237193bd93b38c6
     name: flanksource-ui
@@ -1097,7 +1116,7 @@ entries:
     version: 1.0.393
   - apiVersion: v2
     appVersion: 1.0.392
-    created: "2023-08-23T14:39:24.003947142Z"
+    created: "2023-08-23T14:54:22.968288001Z"
     description: A Helm chart for flanksource-ui
     digest: e497e67ba0fa8ec014b9846c23adff344d289c7535fa337a1f55469190e555f8
     name: flanksource-ui
@@ -1107,7 +1126,7 @@ entries:
     version: 1.0.392
   - apiVersion: v2
     appVersion: 1.0.391
-    created: "2023-08-23T14:39:24.003536428Z"
+    created: "2023-08-23T14:54:22.967783878Z"
     description: A Helm chart for flanksource-ui
     digest: 5afac5f8630c2093b5715db32ed712242e3f8db4f16cdb95150aa49fcadbca8e
     name: flanksource-ui
@@ -1117,7 +1136,7 @@ entries:
     version: 1.0.391
   - apiVersion: v2
     appVersion: 1.0.390
-    created: "2023-08-23T14:39:24.003136415Z"
+    created: "2023-08-23T14:54:22.967279555Z"
     description: A Helm chart for flanksource-ui
     digest: c5afd6479d20f8b59022c29cd68c184272cce9a7d13e4248851b8920e18f9362
     name: flanksource-ui
@@ -1127,7 +1146,7 @@ entries:
     version: 1.0.390
   - apiVersion: v2
     appVersion: 1.0.389
-    created: "2023-08-23T14:39:24.002734202Z"
+    created: "2023-08-23T14:54:22.966790332Z"
     description: A Helm chart for flanksource-ui
     digest: 881402543a8847814e81827ac12180c472b2b1d5a2b1ad1efea444f6e637d2a0
     name: flanksource-ui
@@ -1137,7 +1156,7 @@ entries:
     version: 1.0.389
   - apiVersion: v2
     appVersion: 1.0.388
-    created: "2023-08-23T14:39:24.002327088Z"
+    created: "2023-08-23T14:54:22.966291409Z"
     description: A Helm chart for flanksource-ui
     digest: e1a07cb37e3943b495878b08c303863a58b406263bb349e4c27ba2ea3511ff03
     name: flanksource-ui
@@ -1147,7 +1166,7 @@ entries:
     version: 1.0.388
   - apiVersion: v2
     appVersion: 1.0.387
-    created: "2023-08-23T14:39:24.001924475Z"
+    created: "2023-08-23T14:54:22.965526074Z"
     description: A Helm chart for flanksource-ui
     digest: ae44a8ca8bbfbf684515017d1fdd775e4884f12ee3991eb96bd6524c24f6126f
     name: flanksource-ui
@@ -1157,7 +1176,7 @@ entries:
     version: 1.0.387
   - apiVersion: v2
     appVersion: 1.0.386
-    created: "2023-08-23T14:39:24.001519462Z"
+    created: "2023-08-23T14:54:22.964848643Z"
     description: A Helm chart for flanksource-ui
     digest: 45e32c5819225ce5f2cdd253fee02f7ade7887fd4881dd9bdd00b2a8d186e616
     name: flanksource-ui
@@ -1167,7 +1186,7 @@ entries:
     version: 1.0.386
   - apiVersion: v2
     appVersion: 1.0.385
-    created: "2023-08-23T14:39:24.001119848Z"
+    created: "2023-08-23T14:54:22.962849751Z"
     description: A Helm chart for flanksource-ui
     digest: edb292741a2534f9b82ddefb61d74a72f9aed6a713252e181a3c63c679ceaaae
     name: flanksource-ui
@@ -1177,7 +1196,7 @@ entries:
     version: 1.0.385
   - apiVersion: v2
     appVersion: 1.0.384
-    created: "2023-08-23T14:39:24.000708935Z"
+    created: "2023-08-23T14:54:22.962363428Z"
     description: A Helm chart for flanksource-ui
     digest: 8376fede960f96c43bb4223c683674b9fb9d7cb7ffc8c401a176c7b13d102a38
     name: flanksource-ui
@@ -1187,7 +1206,7 @@ entries:
     version: 1.0.384
   - apiVersion: v2
     appVersion: 1.0.383
-    created: "2023-08-23T14:39:24.00027732Z"
+    created: "2023-08-23T14:54:22.961880006Z"
     description: A Helm chart for flanksource-ui
     digest: 0311ef56d542659256fe7e660d1fad1407a1b18a3849e670de83a08254d62083
     name: flanksource-ui
@@ -1197,7 +1216,7 @@ entries:
     version: 1.0.383
   - apiVersion: v2
     appVersion: 1.0.382
-    created: "2023-08-23T14:39:23.999787004Z"
+    created: "2023-08-23T14:54:22.961386583Z"
     description: A Helm chart for flanksource-ui
     digest: b937de1d77e21301beeaf52414d97b06b62de0b0adb6ee88020b82b36c246f35
     name: flanksource-ui
@@ -1207,7 +1226,7 @@ entries:
     version: 1.0.382
   - apiVersion: v2
     appVersion: 1.0.381
-    created: "2023-08-23T14:39:23.999075981Z"
+    created: "2023-08-23T14:54:22.96088066Z"
     description: A Helm chart for flanksource-ui
     digest: 5ccb88fb54c0a0e2ac11b2d95c368304cd06abd0db8832b9c0343773a006ed56
     name: flanksource-ui
@@ -1217,7 +1236,7 @@ entries:
     version: 1.0.381
   - apiVersion: v2
     appVersion: 1.0.380
-    created: "2023-08-23T14:39:23.998512962Z"
+    created: "2023-08-23T14:54:22.960374636Z"
     description: A Helm chart for flanksource-ui
     digest: 10752330a40cc12a237bf200b71573c1d78b954c74ce7e98823a49b3d975665b
     name: flanksource-ui
@@ -1227,7 +1246,7 @@ entries:
     version: 1.0.380
   - apiVersion: v2
     appVersion: 1.0.379
-    created: "2023-08-23T14:39:23.997719036Z"
+    created: "2023-08-23T14:54:22.959864513Z"
     description: A Helm chart for flanksource-ui
     digest: 898f46d137f46981c3b8144d3b9a0bd98b4d3d0f0db3264a536717793ed91265
     name: flanksource-ui
@@ -1237,7 +1256,7 @@ entries:
     version: 1.0.379
   - apiVersion: v2
     appVersion: 1.0.378
-    created: "2023-08-23T14:39:23.997320223Z"
+    created: "2023-08-23T14:54:22.959353789Z"
     description: A Helm chart for flanksource-ui
     digest: 7bde1aa1332a65441a2297e1a786c61d2ea1297ce256bf631a08a6d356d6774e
     name: flanksource-ui
@@ -1247,7 +1266,7 @@ entries:
     version: 1.0.378
   - apiVersion: v2
     appVersion: 1.0.377
-    created: "2023-08-23T14:39:23.99692211Z"
+    created: "2023-08-23T14:54:22.958831765Z"
     description: A Helm chart for flanksource-ui
     digest: 1aabea1c5c6431008a0d76e25cfac27bd0f36d165e4d1becd57ee144e709a8f8
     name: flanksource-ui
@@ -1257,7 +1276,7 @@ entries:
     version: 1.0.377
   - apiVersion: v2
     appVersion: 1.0.376
-    created: "2023-08-23T14:39:23.996493296Z"
+    created: "2023-08-23T14:54:22.958323742Z"
     description: A Helm chart for flanksource-ui
     digest: 2caa19460c33261db2cde03582da878fe91e2c6ace085695cb27a6bc6e9ec447
     name: flanksource-ui
@@ -1267,7 +1286,7 @@ entries:
     version: 1.0.376
   - apiVersion: v2
     appVersion: 1.0.375
-    created: "2023-08-23T14:39:23.996076582Z"
+    created: "2023-08-23T14:54:22.957829119Z"
     description: A Helm chart for flanksource-ui
     digest: a0f11281eaa21dcbc591d5607eac22833f9669d98964cda80db095d5419c540c
     name: flanksource-ui
@@ -1277,7 +1296,7 @@ entries:
     version: 1.0.375
   - apiVersion: v2
     appVersion: 1.0.374
-    created: "2023-08-23T14:39:23.995661968Z"
+    created: "2023-08-23T14:54:22.957336496Z"
     description: A Helm chart for flanksource-ui
     digest: fb4adcc60ae0fbf2d7d19886d4c167310ed72ac7c13d852b1e9a630cd76dd1b9
     name: flanksource-ui
@@ -1287,7 +1306,7 @@ entries:
     version: 1.0.374
   - apiVersion: v2
     appVersion: 1.0.373
-    created: "2023-08-23T14:39:23.995242054Z"
+    created: "2023-08-23T14:54:22.956847774Z"
     description: A Helm chart for flanksource-ui
     digest: eb607a5147772430e93bc37736fbc2f6148ea91318eff26e39719c00678fadc3
     name: flanksource-ui
@@ -1297,7 +1316,7 @@ entries:
     version: 1.0.373
   - apiVersion: v2
     appVersion: 1.0.372
-    created: "2023-08-23T14:39:23.99481734Z"
+    created: "2023-08-23T14:54:22.956310149Z"
     description: A Helm chart for flanksource-ui
     digest: 406956a376e4eeb1429492aaeb3a86cb9cf406a3ffca176a19c238fccce46bea
     name: flanksource-ui
@@ -1307,7 +1326,7 @@ entries:
     version: 1.0.372
   - apiVersion: v2
     appVersion: 1.0.371
-    created: "2023-08-23T14:39:23.994404427Z"
+    created: "2023-08-23T14:54:22.955797925Z"
     description: A Helm chart for flanksource-ui
     digest: e8e3778fd898d732c3644b4a1a1cea58415ee4c8d6bff3ba60001c0c948db55b
     name: flanksource-ui
@@ -1317,7 +1336,7 @@ entries:
     version: 1.0.371
   - apiVersion: v2
     appVersion: 1.0.370
-    created: "2023-08-23T14:39:23.994001113Z"
+    created: "2023-08-23T14:54:22.955295702Z"
     description: A Helm chart for flanksource-ui
     digest: 006e9a1739ba6aa3aa293c9cbaa58fc2d5b9f0ca4f5f6bdda7382700062e4bdb
     name: flanksource-ui
@@ -1327,7 +1346,7 @@ entries:
     version: 1.0.370
   - apiVersion: v2
     appVersion: 1.0.369
-    created: "2023-08-23T14:39:23.9935989Z"
+    created: "2023-08-23T14:54:22.95480188Z"
     description: A Helm chart for flanksource-ui
     digest: 6a2f5312589ea408a679c8dce954540d1984230bab2bd93550680a79ff328de2
     name: flanksource-ui
@@ -1337,7 +1356,7 @@ entries:
     version: 1.0.369
   - apiVersion: v2
     appVersion: 1.0.368
-    created: "2023-08-23T14:39:23.993195787Z"
+    created: "2023-08-23T14:54:22.954299456Z"
     description: A Helm chart for flanksource-ui
     digest: 953fec76a5428608bff6bd7f942d87978e04558bfca8991fa609b62bc754c7e2
     name: flanksource-ui
@@ -1347,7 +1366,7 @@ entries:
     version: 1.0.368
   - apiVersion: v2
     appVersion: 1.0.367
-    created: "2023-08-23T14:39:23.992774473Z"
+    created: "2023-08-23T14:54:22.953336112Z"
     description: A Helm chart for flanksource-ui
     digest: 72087c0fdbad0eb413c7aa74ffef0ce14f113d5e9b6d300a55530af73be1d4c3
     name: flanksource-ui
@@ -1357,7 +1376,7 @@ entries:
     version: 1.0.367
   - apiVersion: v2
     appVersion: 1.0.366
-    created: "2023-08-23T14:39:23.992310658Z"
+    created: "2023-08-23T14:54:22.952663781Z"
     description: A Helm chart for flanksource-ui
     digest: 024bdb74ceb3790e7742bb4ee3f82eeebeaf1b92e3a112fa6213e6f4dba5b172
     name: flanksource-ui
@@ -1367,7 +1386,7 @@ entries:
     version: 1.0.366
   - apiVersion: v2
     appVersion: 1.0.365
-    created: "2023-08-23T14:39:23.991897044Z"
+    created: "2023-08-23T14:54:22.951168012Z"
     description: A Helm chart for flanksource-ui
     digest: 4bb82cea4e993fbeca881c7ea85a901b3a2eb2c5268edb55b3f38be4456a9f2f
     name: flanksource-ui
@@ -1377,7 +1396,7 @@ entries:
     version: 1.0.365
   - apiVersion: v2
     appVersion: 1.0.364
-    created: "2023-08-23T14:39:23.99147903Z"
+    created: "2023-08-23T14:54:22.950642288Z"
     description: A Helm chart for flanksource-ui
     digest: c1ef0988a50303df3002cd51633f4ea252ddcc1dad1169c944e96959aa792f8d
     name: flanksource-ui
@@ -1387,7 +1406,7 @@ entries:
     version: 1.0.364
   - apiVersion: v2
     appVersion: 1.0.363
-    created: "2023-08-23T14:39:23.991069417Z"
+    created: "2023-08-23T14:54:22.950159365Z"
     description: A Helm chart for flanksource-ui
     digest: 78a3d9a0653c31673dc62142b64d159cd9a20165d7f56516fc69c1265d57137f
     name: flanksource-ui
@@ -1397,7 +1416,7 @@ entries:
     version: 1.0.363
   - apiVersion: v2
     appVersion: 1.0.362
-    created: "2023-08-23T14:39:23.990654803Z"
+    created: "2023-08-23T14:54:22.949668643Z"
     description: A Helm chart for flanksource-ui
     digest: 3ba30258c9619d3abcea2a72a042371549abd743b4746cfd980d9b09884d105f
     name: flanksource-ui
@@ -1407,7 +1426,7 @@ entries:
     version: 1.0.362
   - apiVersion: v2
     appVersion: 1.0.361
-    created: "2023-08-23T14:39:23.990221489Z"
+    created: "2023-08-23T14:54:22.949156719Z"
     description: A Helm chart for flanksource-ui
     digest: f9c59c10a51a2a338ed685425a170c7df41b2d49a7179322d3be6fb5147566e0
     name: flanksource-ui
@@ -1417,7 +1436,7 @@ entries:
     version: 1.0.361
   - apiVersion: v2
     appVersion: 1.0.360
-    created: "2023-08-23T14:39:23.989798675Z"
+    created: "2023-08-23T14:54:22.948670597Z"
     description: A Helm chart for flanksource-ui
     digest: 88301f433028d9645d19b3cbac11d9210422ae626967f2c5e583d94d9804134b
     name: flanksource-ui
@@ -1427,7 +1446,7 @@ entries:
     version: 1.0.360
   - apiVersion: v2
     appVersion: 1.0.359
-    created: "2023-08-23T14:39:23.98936996Z"
+    created: "2023-08-23T14:54:22.948140372Z"
     description: A Helm chart for flanksource-ui
     digest: 14714b4e81ce635a6be920339f7d2045a248149894bf71edf36a1a33088c1c75
     name: flanksource-ui
@@ -1437,7 +1456,7 @@ entries:
     version: 1.0.359
   - apiVersion: v2
     appVersion: 1.0.358
-    created: "2023-08-23T14:39:23.988955547Z"
+    created: "2023-08-23T14:54:22.94765905Z"
     description: A Helm chart for flanksource-ui
     digest: ae307701d4e7c06bfe0b552a94d7992d94baf797a31014811de64e4ba6575a55
     name: flanksource-ui
@@ -1447,7 +1466,7 @@ entries:
     version: 1.0.358
   - apiVersion: v2
     appVersion: 1.0.357
-    created: "2023-08-23T14:39:23.988495732Z"
+    created: "2023-08-23T14:54:22.947158627Z"
     description: A Helm chart for flanksource-ui
     digest: 5cab1104c82714078305d81fb89b0da9766cd753d2bd17844e55f277c4466bdb
     name: flanksource-ui
@@ -1457,7 +1476,7 @@ entries:
     version: 1.0.357
   - apiVersion: v2
     appVersion: 1.0.356
-    created: "2023-08-23T14:39:23.987901712Z"
+    created: "2023-08-23T14:54:22.946662904Z"
     description: A Helm chart for flanksource-ui
     digest: 8a5a11b5073c1baa6636d92256fd210591b88b1347fd237333b8c88fd75b8348
     name: flanksource-ui
@@ -1467,7 +1486,7 @@ entries:
     version: 1.0.356
   - apiVersion: v2
     appVersion: 1.0.355
-    created: "2023-08-23T14:39:23.987352394Z"
+    created: "2023-08-23T14:54:22.946155281Z"
     description: A Helm chart for flanksource-ui
     digest: 6de1121c11eee6ea339cf672e7319c108e185f2da21c9bc55dc6a216eeea7e7e
     name: flanksource-ui
@@ -1477,7 +1496,7 @@ entries:
     version: 1.0.355
   - apiVersion: v2
     appVersion: 1.0.354
-    created: "2023-08-23T14:39:23.986800776Z"
+    created: "2023-08-23T14:54:22.945672659Z"
     description: A Helm chart for flanksource-ui
     digest: d33fd5a28cd74b7760130f314667d7f460ececff939d6a4b6314b54b5c881d3d
     name: flanksource-ui
@@ -1487,7 +1506,7 @@ entries:
     version: 1.0.354
   - apiVersion: v2
     appVersion: 1.0.353
-    created: "2023-08-23T14:39:23.986266558Z"
+    created: "2023-08-23T14:54:22.945182836Z"
     description: A Helm chart for flanksource-ui
     digest: 7f39d483258f8613682f5746627a16e2067fa7c0709f8ee332ceafeec6e30544
     name: flanksource-ui
@@ -1497,7 +1516,7 @@ entries:
     version: 1.0.353
   - apiVersion: v2
     appVersion: 1.0.352
-    created: "2023-08-23T14:39:23.985701339Z"
+    created: "2023-08-23T14:54:22.944686113Z"
     description: A Helm chart for flanksource-ui
     digest: eab4df0ef0334fd4b6a5551372aa82ae4c9f838eb383d42e9af9702f1c3a90a0
     name: flanksource-ui
@@ -1507,7 +1526,7 @@ entries:
     version: 1.0.352
   - apiVersion: v2
     appVersion: 1.0.351
-    created: "2023-08-23T14:39:23.985021217Z"
+    created: "2023-08-23T14:54:22.944149688Z"
     description: A Helm chart for flanksource-ui
     digest: 8fc61c9e456f5f748b5c25682a24592d3aac1c739aacede362a7869408f7c0ce
     name: flanksource-ui
@@ -1517,7 +1536,7 @@ entries:
     version: 1.0.351
   - apiVersion: v2
     appVersion: 1.0.302
-    created: "2023-08-23T14:39:23.984436598Z"
+    created: "2023-08-23T14:54:22.943654766Z"
     description: A Helm chart for flanksource-ui
     digest: 6c72b141bc13524f69043c935d6c81b7aee5d577122c509f598361557e9693f4
     name: flanksource-ui
@@ -1528,7 +1547,7 @@ entries:
   kopper:
   - apiVersion: v2
     appVersion: 1.0.4
-    created: "2023-08-23T14:39:24.010533759Z"
+    created: "2023-08-23T14:54:22.975478733Z"
     description: A Helm chart for Kubernetes
     digest: 9a7dc502d33a213aea72bc5fb0080998714b6d49ead89a819f2859f665eea627
     name: kopper
@@ -1537,7 +1556,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2023-08-23T14:39:24.010398255Z"
+    created: "2023-08-23T14:54:22.97499321Z"
     description: A Helm chart for Kubernetes
     digest: 8892b1d5e7bccfbe0e1f382e576c64e528d21ef614326f7f5536045c09ab9daa
     name: kopper
@@ -1547,7 +1566,7 @@ entries:
   mission-control:
   - apiVersion: v2
     appVersion: 0.1.74-beta.4
-    created: "2023-08-23T14:39:24.812792141Z"
+    created: "2023-08-23T14:54:23.878998549Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1580,7 +1599,7 @@ entries:
     version: 0.1.74-beta.4
   - apiVersion: v2
     appVersion: 0.1.74-beta.3
-    created: "2023-08-23T14:39:24.807351061Z"
+    created: "2023-08-23T14:54:23.872494161Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1613,7 +1632,7 @@ entries:
     version: 0.1.74-beta.3
   - apiVersion: v2
     appVersion: 0.1.74-beta.2
-    created: "2023-08-23T14:39:24.800860347Z"
+    created: "2023-08-23T14:54:23.864427183Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1646,7 +1665,7 @@ entries:
     version: 0.1.74-beta.2
   - apiVersion: v2
     appVersion: 0.1.74-beta.1
-    created: "2023-08-23T14:39:24.795438768Z"
+    created: "2023-08-23T14:54:23.858028966Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1679,7 +1698,7 @@ entries:
     version: 0.1.74-beta.1
   - apiVersion: v2
     appVersion: 0.1.73
-    created: "2023-08-23T14:39:24.787474905Z"
+    created: "2023-08-23T14:54:23.848126371Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1712,7 +1731,7 @@ entries:
     version: 0.1.73
   - apiVersion: v2
     appVersion: 0.1.73-beta.1
-    created: "2023-08-23T14:39:24.782112528Z"
+    created: "2023-08-23T14:54:23.841740751Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1745,7 +1764,7 @@ entries:
     version: 0.1.73-beta.1
   - apiVersion: v2
     appVersion: 0.1.72
-    created: "2023-08-23T14:39:24.775410407Z"
+    created: "2023-08-23T14:54:23.833834031Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1778,7 +1797,7 @@ entries:
     version: 0.1.72
   - apiVersion: v2
     appVersion: 0.1.72-beta.7
-    created: "2023-08-23T14:39:24.769986528Z"
+    created: "2023-08-23T14:54:23.827204875Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1811,7 +1830,7 @@ entries:
     version: 0.1.72-beta.7
   - apiVersion: v2
     appVersion: 0.1.72-beta.6
-    created: "2023-08-23T14:39:24.763438012Z"
+    created: "2023-08-23T14:54:23.818666321Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1844,7 +1863,7 @@ entries:
     version: 0.1.72-beta.6
   - apiVersion: v2
     appVersion: 0.1.72-beta.5
-    created: "2023-08-23T14:39:24.757963131Z"
+    created: "2023-08-23T14:54:23.812129841Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1877,7 +1896,7 @@ entries:
     version: 0.1.72-beta.5
   - apiVersion: v2
     appVersion: 0.1.72-beta.4
-    created: "2023-08-23T14:39:24.751633222Z"
+    created: "2023-08-23T14:54:23.804409772Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1910,7 +1929,7 @@ entries:
     version: 0.1.72-beta.4
   - apiVersion: v2
     appVersion: 0.1.72-beta.3
-    created: "2023-08-23T14:39:24.746232444Z"
+    created: "2023-08-23T14:54:23.797881489Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1943,7 +1962,7 @@ entries:
     version: 0.1.72-beta.3
   - apiVersion: v2
     appVersion: 0.1.72-beta.2
-    created: "2023-08-23T14:39:24.73976633Z"
+    created: "2023-08-23T14:54:23.789862898Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -1976,7 +1995,7 @@ entries:
     version: 0.1.72-beta.2
   - apiVersion: v2
     appVersion: 0.1.72-beta.1
-    created: "2023-08-23T14:39:24.734351552Z"
+    created: "2023-08-23T14:54:23.783425092Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2009,7 +2028,7 @@ entries:
     version: 0.1.72-beta.1
   - apiVersion: v2
     appVersion: 0.1.71
-    created: "2023-08-23T14:39:24.727046311Z"
+    created: "2023-08-23T14:54:23.775440792Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2042,7 +2061,7 @@ entries:
     version: 0.1.71
   - apiVersion: v2
     appVersion: 0.1.71-beta.1
-    created: "2023-08-23T14:39:24.72158813Z"
+    created: "2023-08-23T14:54:23.768991689Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2075,7 +2094,7 @@ entries:
     version: 0.1.71-beta.1
   - apiVersion: v2
     appVersion: 0.1.70
-    created: "2023-08-23T14:39:24.715246721Z"
+    created: "2023-08-23T14:54:23.761093267Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2108,7 +2127,7 @@ entries:
     version: 0.1.70
   - apiVersion: v2
     appVersion: 0.1.70-beta.4
-    created: "2023-08-23T14:39:24.709853743Z"
+    created: "2023-08-23T14:54:23.754717444Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2141,7 +2160,7 @@ entries:
     version: 0.1.70-beta.4
   - apiVersion: v2
     appVersion: 0.1.70-beta.3
-    created: "2023-08-23T14:39:24.702947815Z"
+    created: "2023-08-23T14:54:23.747155533Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2173,7 +2192,7 @@ entries:
     version: 0.1.70-beta.3
   - apiVersion: v2
     appVersion: 0.1.70-beta.2
-    created: "2023-08-23T14:39:24.697550937Z"
+    created: "2023-08-23T14:54:23.740847193Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2205,7 +2224,7 @@ entries:
     version: 0.1.70-beta.2
   - apiVersion: v2
     appVersion: 0.1.70-beta.1
-    created: "2023-08-23T14:39:24.691853349Z"
+    created: "2023-08-23T14:54:23.733009255Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2237,7 +2256,7 @@ entries:
     version: 0.1.70-beta.1
   - apiVersion: v2
     appVersion: 0.1.69
-    created: "2023-08-23T14:39:24.685883652Z"
+    created: "2023-08-23T14:54:23.726645829Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2269,7 +2288,7 @@ entries:
     version: 0.1.69
   - apiVersion: v2
     appVersion: 0.1.69-beta.8
-    created: "2023-08-23T14:39:24.679551143Z"
+    created: "2023-08-23T14:54:23.7187746Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2301,7 +2320,7 @@ entries:
     version: 0.1.69-beta.8
   - apiVersion: v2
     appVersion: 0.1.69-beta.7
-    created: "2023-08-23T14:39:24.674042461Z"
+    created: "2023-08-23T14:54:23.712413673Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2333,7 +2352,7 @@ entries:
     version: 0.1.69-beta.7
   - apiVersion: v2
     appVersion: 0.1.69-beta.6
-    created: "2023-08-23T14:39:24.667842556Z"
+    created: "2023-08-23T14:54:23.704919145Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2365,7 +2384,7 @@ entries:
     version: 0.1.69-beta.6
   - apiVersion: v2
     appVersion: 0.1.69-beta.5
-    created: "2023-08-23T14:39:24.662448678Z"
+    created: "2023-08-23T14:54:23.698561717Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2397,7 +2416,7 @@ entries:
     version: 0.1.69-beta.5
   - apiVersion: v2
     appVersion: 0.1.69-beta.4
-    created: "2023-08-23T14:39:24.655556551Z"
+    created: "2023-08-23T14:54:23.690622506Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2429,7 +2448,7 @@ entries:
     version: 0.1.69-beta.4
   - apiVersion: v2
     appVersion: 0.1.69-beta.3
-    created: "2023-08-23T14:39:24.65008427Z"
+    created: "2023-08-23T14:54:23.684254981Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2461,7 +2480,7 @@ entries:
     version: 0.1.69-beta.3
   - apiVersion: v2
     appVersion: 0.1.69-beta.2
-    created: "2023-08-23T14:39:24.64341165Z"
+    created: "2023-08-23T14:54:23.676760252Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2493,7 +2512,7 @@ entries:
     version: 0.1.69-beta.2
   - apiVersion: v2
     appVersion: 0.1.69-beta.1
-    created: "2023-08-23T14:39:24.637997871Z"
+    created: "2023-08-23T14:54:23.670366634Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2525,7 +2544,7 @@ entries:
     version: 0.1.69-beta.1
   - apiVersion: v2
     appVersion: 0.1.68
-    created: "2023-08-23T14:39:24.631650962Z"
+    created: "2023-08-23T14:54:23.662672658Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2557,7 +2576,7 @@ entries:
     version: 0.1.68
   - apiVersion: v2
     appVersion: 0.1.68-beta.5
-    created: "2023-08-23T14:39:24.626243083Z"
+    created: "2023-08-23T14:54:23.656321429Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2589,7 +2608,7 @@ entries:
     version: 0.1.68-beta.5
   - apiVersion: v2
     appVersion: 0.1.68-beta.4
-    created: "2023-08-23T14:39:24.61704478Z"
+    created: "2023-08-23T14:54:23.648531378Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2621,7 +2640,7 @@ entries:
     version: 0.1.68-beta.4
   - apiVersion: v2
     appVersion: 0.1.68-beta.3
-    created: "2023-08-23T14:39:24.611525997Z"
+    created: "2023-08-23T14:54:23.64213896Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2653,7 +2672,7 @@ entries:
     version: 0.1.68-beta.3
   - apiVersion: v2
     appVersion: 0.1.68-beta.2
-    created: "2023-08-23T14:39:24.604834676Z"
+    created: "2023-08-23T14:54:23.63434701Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2685,7 +2704,7 @@ entries:
     version: 0.1.68-beta.2
   - apiVersion: v2
     appVersion: 0.1.68-beta.1
-    created: "2023-08-23T14:39:24.599337395Z"
+    created: "2023-08-23T14:54:23.627984784Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2717,7 +2736,7 @@ entries:
     version: 0.1.68-beta.1
   - apiVersion: v2
     appVersion: 0.1.67
-    created: "2023-08-23T14:39:24.590545405Z"
+    created: "2023-08-23T14:54:23.619981989Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2749,7 +2768,7 @@ entries:
     version: 0.1.67
   - apiVersion: v2
     appVersion: 0.1.67-beta.7
-    created: "2023-08-23T14:39:24.584913719Z"
+    created: "2023-08-23T14:54:23.613567976Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2781,7 +2800,7 @@ entries:
     version: 0.1.67-beta.7
   - apiVersion: v2
     appVersion: 0.1.67-beta.6
-    created: "2023-08-23T14:39:24.578378803Z"
+    created: "2023-08-23T14:54:23.605856005Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2813,7 +2832,7 @@ entries:
     version: 0.1.67-beta.6
   - apiVersion: v2
     appVersion: 0.1.67-beta.5
-    created: "2023-08-23T14:39:24.572810319Z"
+    created: "2023-08-23T14:54:23.599494778Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2845,7 +2864,7 @@ entries:
     version: 0.1.67-beta.5
   - apiVersion: v2
     appVersion: 0.1.67-beta.4
-    created: "2023-08-23T14:39:24.56284219Z"
+    created: "2023-08-23T14:54:23.591743318Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2877,7 +2896,7 @@ entries:
     version: 0.1.67-beta.4
   - apiVersion: v2
     appVersion: 0.1.67-beta.3
-    created: "2023-08-23T14:39:24.557314008Z"
+    created: "2023-08-23T14:54:23.585410784Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2909,7 +2928,7 @@ entries:
     version: 0.1.67-beta.3
   - apiVersion: v2
     appVersion: 0.1.67-beta.2
-    created: "2023-08-23T14:39:24.543604255Z"
+    created: "2023-08-23T14:54:23.577335908Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2941,7 +2960,7 @@ entries:
     version: 0.1.67-beta.2
   - apiVersion: v2
     appVersion: 0.1.67-beta.1
-    created: "2023-08-23T14:39:24.531863968Z"
+    created: "2023-08-23T14:54:23.570925994Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -2973,7 +2992,7 @@ entries:
     version: 0.1.67-beta.1
   - apiVersion: v2
     appVersion: 0.1.66
-    created: "2023-08-23T14:39:24.526025675Z"
+    created: "2023-08-23T14:54:23.56303577Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3005,7 +3024,7 @@ entries:
     version: 0.1.66
   - apiVersion: v2
     appVersion: 0.1.66-beta.15
-    created: "2023-08-23T14:39:24.446059135Z"
+    created: "2023-08-23T14:54:23.498508745Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3037,7 +3056,7 @@ entries:
     version: 0.1.66-beta.15
   - apiVersion: v2
     appVersion: 0.1.66-beta.14
-    created: "2023-08-23T14:39:24.436723927Z"
+    created: "2023-08-23T14:54:23.4906979Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3069,7 +3088,7 @@ entries:
     version: 0.1.66-beta.14
   - apiVersion: v2
     appVersion: 0.1.66-beta.13
-    created: "2023-08-23T14:39:24.430497522Z"
+    created: "2023-08-23T14:54:23.484321777Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3101,7 +3120,7 @@ entries:
     version: 0.1.66-beta.13
   - apiVersion: v2
     appVersion: 0.1.66-beta.12
-    created: "2023-08-23T14:39:24.423859703Z"
+    created: "2023-08-23T14:54:23.476621103Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3133,7 +3152,7 @@ entries:
     version: 0.1.66-beta.12
   - apiVersion: v2
     appVersion: 0.1.66-beta.11
-    created: "2023-08-23T14:39:24.418429423Z"
+    created: "2023-08-23T14:54:23.470159503Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3165,7 +3184,7 @@ entries:
     version: 0.1.66-beta.11
   - apiVersion: v2
     appVersion: 0.1.66-beta.10
-    created: "2023-08-23T14:39:24.411800705Z"
+    created: "2023-08-23T14:54:23.461650541Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3197,7 +3216,7 @@ entries:
     version: 0.1.66-beta.10
   - apiVersion: v2
     appVersion: 0.1.66-beta.9
-    created: "2023-08-23T14:39:24.514317689Z"
+    created: "2023-08-23T14:54:23.555840563Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3229,7 +3248,7 @@ entries:
     version: 0.1.66-beta.9
   - apiVersion: v2
     appVersion: 0.1.66-beta.8
-    created: "2023-08-23T14:39:24.508741805Z"
+    created: "2023-08-23T14:54:23.54820987Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3261,7 +3280,7 @@ entries:
     version: 0.1.66-beta.8
   - apiVersion: v2
     appVersion: 0.1.66-beta.7
-    created: "2023-08-23T14:39:24.49437823Z"
+    created: "2023-08-23T14:54:23.541875136Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3293,7 +3312,7 @@ entries:
     version: 0.1.66-beta.7
   - apiVersion: v2
     appVersion: 0.1.66-beta.6
-    created: "2023-08-23T14:39:24.488981152Z"
+    created: "2023-08-23T14:54:23.534175762Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3325,7 +3344,7 @@ entries:
     version: 0.1.66-beta.6
   - apiVersion: v2
     appVersion: 0.1.66-beta.5
-    created: "2023-08-23T14:39:24.483203262Z"
+    created: "2023-08-23T14:54:23.527730458Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3357,7 +3376,7 @@ entries:
     version: 0.1.66-beta.5
   - apiVersion: v2
     appVersion: 0.1.66-beta.4
-    created: "2023-08-23T14:39:24.469627713Z"
+    created: "2023-08-23T14:54:23.519126521Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3389,7 +3408,7 @@ entries:
     version: 0.1.66-beta.4
   - apiVersion: v2
     appVersion: 0.1.66-beta.3
-    created: "2023-08-23T14:39:24.463905125Z"
+    created: "2023-08-23T14:54:23.512623132Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3421,7 +3440,7 @@ entries:
     version: 0.1.66-beta.3
   - apiVersion: v2
     appVersion: 0.1.66-beta.2
-    created: "2023-08-23T14:39:24.451691721Z"
+    created: "2023-08-23T14:54:23.504829082Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3453,7 +3472,7 @@ entries:
     version: 0.1.66-beta.2
   - apiVersion: v2
     appVersion: 0.1.66-beta.1
-    created: "2023-08-23T14:39:24.406306623Z"
+    created: "2023-08-23T14:54:23.455205037Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3485,7 +3504,7 @@ entries:
     version: 0.1.66-beta.1
   - apiVersion: v2
     appVersion: 0.1.65
-    created: "2023-08-23T14:39:24.399022183Z"
+    created: "2023-08-23T14:54:23.44500482Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3517,7 +3536,7 @@ entries:
     version: 0.1.65
   - apiVersion: v2
     appVersion: 0.1.65-beta.17
-    created: "2023-08-23T14:39:24.345588619Z"
+    created: "2023-08-23T14:54:23.382150055Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3549,7 +3568,7 @@ entries:
     version: 0.1.65-beta.17
   - apiVersion: v2
     appVersion: 0.1.65-beta.15
-    created: "2023-08-23T14:39:24.335909099Z"
+    created: "2023-08-23T14:54:23.369824298Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3581,7 +3600,7 @@ entries:
     version: 0.1.65-beta.15
   - apiVersion: v2
     appVersion: 0.1.65-beta.14
-    created: "2023-08-23T14:39:24.330615025Z"
+    created: "2023-08-23T14:54:23.363180846Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3613,7 +3632,7 @@ entries:
     version: 0.1.65-beta.14
   - apiVersion: v2
     appVersion: 0.1.65-beta.13
-    created: "2023-08-23T14:39:24.324039308Z"
+    created: "2023-08-23T14:54:23.355350605Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3645,7 +3664,7 @@ entries:
     version: 0.1.65-beta.13
   - apiVersion: v2
     appVersion: 0.1.65-beta.12
-    created: "2023-08-23T14:39:24.318674331Z"
+    created: "2023-08-23T14:54:23.348953788Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3677,7 +3696,7 @@ entries:
     version: 0.1.65-beta.12
   - apiVersion: v2
     appVersion: 0.1.65-beta.11
-    created: "2023-08-23T14:39:24.312276819Z"
+    created: "2023-08-23T14:54:23.341576229Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3709,7 +3728,7 @@ entries:
     version: 0.1.65-beta.11
   - apiVersion: v2
     appVersion: 0.1.65-beta.10
-    created: "2023-08-23T14:39:24.306891042Z"
+    created: "2023-08-23T14:54:23.335245794Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3741,7 +3760,7 @@ entries:
     version: 0.1.65-beta.10
   - apiVersion: v2
     appVersion: 0.1.65-beta.9
-    created: "2023-08-23T14:39:24.391864446Z"
+    created: "2023-08-23T14:54:23.437709439Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3773,7 +3792,7 @@ entries:
     version: 0.1.65-beta.9
   - apiVersion: v2
     appVersion: 0.1.65-beta.8
-    created: "2023-08-23T14:39:24.385359532Z"
+    created: "2023-08-23T14:54:23.430106339Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3805,7 +3824,7 @@ entries:
     version: 0.1.65-beta.8
   - apiVersion: v2
     appVersion: 0.1.65-beta.7
-    created: "2023-08-23T14:39:24.380018455Z"
+    created: "2023-08-23T14:54:23.423725918Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3837,7 +3856,7 @@ entries:
     version: 0.1.65-beta.7
   - apiVersion: v2
     appVersion: 0.1.65-beta.6
-    created: "2023-08-23T14:39:24.373684446Z"
+    created: "2023-08-23T14:54:23.416144712Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3869,7 +3888,7 @@ entries:
     version: 0.1.65-beta.6
   - apiVersion: v2
     appVersion: 0.1.65-beta.5
-    created: "2023-08-23T14:39:24.368415672Z"
+    created: "2023-08-23T14:54:23.409832473Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3901,7 +3920,7 @@ entries:
     version: 0.1.65-beta.5
   - apiVersion: v2
     appVersion: 0.1.65-beta.4
-    created: "2023-08-23T14:39:24.362434875Z"
+    created: "2023-08-23T14:54:23.402307553Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3933,7 +3952,7 @@ entries:
     version: 0.1.65-beta.4
   - apiVersion: v2
     appVersion: 0.1.65-beta.3
-    created: "2023-08-23T14:39:24.357171601Z"
+    created: "2023-08-23T14:54:23.39596872Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3965,7 +3984,7 @@ entries:
     version: 0.1.65-beta.3
   - apiVersion: v2
     appVersion: 0.1.65-beta.2
-    created: "2023-08-23T14:39:24.350888294Z"
+    created: "2023-08-23T14:54:23.38851668Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -3997,7 +4016,7 @@ entries:
     version: 0.1.65-beta.2
   - apiVersion: v2
     appVersion: 0.1.65-beta.1
-    created: "2023-08-23T14:39:24.300450229Z"
+    created: "2023-08-23T14:54:23.327830645Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4029,7 +4048,7 @@ entries:
     version: 0.1.65-beta.1
   - apiVersion: v2
     appVersion: 0.1.64
-    created: "2023-08-23T14:39:24.295086452Z"
+    created: "2023-08-23T14:54:23.321599284Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4061,7 +4080,7 @@ entries:
     version: 0.1.64
   - apiVersion: v2
     appVersion: 0.1.64-beta.6
-    created: "2023-08-23T14:39:24.288441733Z"
+    created: "2023-08-23T14:54:23.314124151Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4093,7 +4112,7 @@ entries:
     version: 0.1.64-beta.6
   - apiVersion: v2
     appVersion: 0.1.64-beta.5
-    created: "2023-08-23T14:39:24.283021954Z"
+    created: "2023-08-23T14:54:23.307819409Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4125,7 +4144,7 @@ entries:
     version: 0.1.64-beta.5
   - apiVersion: v2
     appVersion: 0.1.64-beta.4
-    created: "2023-08-23T14:39:24.27625063Z"
+    created: "2023-08-23T14:54:23.300398362Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4157,7 +4176,7 @@ entries:
     version: 0.1.64-beta.4
   - apiVersion: v2
     appVersion: 0.1.64-beta.3
-    created: "2023-08-23T14:39:24.27079225Z"
+    created: "2023-08-23T14:54:23.294258877Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4189,7 +4208,7 @@ entries:
     version: 0.1.64-beta.3
   - apiVersion: v2
     appVersion: 0.1.64-beta.2
-    created: "2023-08-23T14:39:24.264334137Z"
+    created: "2023-08-23T14:54:23.287092862Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4221,7 +4240,7 @@ entries:
     version: 0.1.64-beta.2
   - apiVersion: v2
     appVersion: 0.1.64-beta.1
-    created: "2023-08-23T14:39:24.259048962Z"
+    created: "2023-08-23T14:54:23.281039255Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4253,7 +4272,7 @@ entries:
     version: 0.1.64-beta.1
   - apiVersion: v2
     appVersion: 0.1.63
-    created: "2023-08-23T14:39:24.252806556Z"
+    created: "2023-08-23T14:54:23.272783326Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4285,7 +4304,7 @@ entries:
     version: 0.1.63
   - apiVersion: v2
     appVersion: 0.1.63-beta.5
-    created: "2023-08-23T14:39:24.247483381Z"
+    created: "2023-08-23T14:54:23.266548267Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4317,7 +4336,7 @@ entries:
     version: 0.1.63-beta.5
   - apiVersion: v2
     appVersion: 0.1.63-beta.4
-    created: "2023-08-23T14:39:24.241142671Z"
+    created: "2023-08-23T14:54:23.259342862Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4349,7 +4368,7 @@ entries:
     version: 0.1.63-beta.4
   - apiVersion: v2
     appVersion: 0.1.63-beta.3
-    created: "2023-08-23T14:39:24.235821196Z"
+    created: "2023-08-23T14:54:23.253109333Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4381,7 +4400,7 @@ entries:
     version: 0.1.63-beta.3
   - apiVersion: v2
     appVersion: 0.1.63-beta.2
-    created: "2023-08-23T14:39:24.229531988Z"
+    created: "2023-08-23T14:54:23.244829351Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4413,7 +4432,7 @@ entries:
     version: 0.1.63-beta.2
   - apiVersion: v2
     appVersion: 0.1.63-beta.1
-    created: "2023-08-23T14:39:24.224158511Z"
+    created: "2023-08-23T14:54:23.238546062Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4445,7 +4464,7 @@ entries:
     version: 0.1.63-beta.1
   - apiVersion: v2
     appVersion: 0.1.62
-    created: "2023-08-23T14:39:24.217661196Z"
+    created: "2023-08-23T14:54:23.23091301Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4477,7 +4496,7 @@ entries:
     version: 0.1.62
   - apiVersion: v2
     appVersion: 0.1.62-beta.24
-    created: "2023-08-23T14:39:24.171381869Z"
+    created: "2023-08-23T14:54:23.16975679Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4509,7 +4528,7 @@ entries:
     version: 0.1.62-beta.24
   - apiVersion: v2
     appVersion: 0.1.62-beta.23
-    created: "2023-08-23T14:39:24.16596809Z"
+    created: "2023-08-23T14:54:23.161049289Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4541,7 +4560,7 @@ entries:
     version: 0.1.62-beta.23
   - apiVersion: v2
     appVersion: 0.1.62-beta.22
-    created: "2023-08-23T14:39:24.159464475Z"
+    created: "2023-08-23T14:54:23.154726597Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4573,7 +4592,7 @@ entries:
     version: 0.1.62-beta.22
   - apiVersion: v2
     appVersion: 0.1.62-beta.21
-    created: "2023-08-23T14:39:24.154088398Z"
+    created: "2023-08-23T14:54:23.147548766Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4605,7 +4624,7 @@ entries:
     version: 0.1.62-beta.21
   - apiVersion: v2
     appVersion: 0.1.62-beta.20
-    created: "2023-08-23T14:39:24.147974196Z"
+    created: "2023-08-23T14:54:23.141296578Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4637,7 +4656,7 @@ entries:
     version: 0.1.62-beta.20
   - apiVersion: v2
     appVersion: 0.1.62-beta.19
-    created: "2023-08-23T14:39:24.131185142Z"
+    created: "2023-08-23T14:54:23.127787355Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4669,7 +4688,7 @@ entries:
     version: 0.1.62-beta.19
   - apiVersion: v2
     appVersion: 0.1.62-beta.18
-    created: "2023-08-23T14:39:24.125783363Z"
+    created: "2023-08-23T14:54:23.120421815Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4701,7 +4720,7 @@ entries:
     version: 0.1.62-beta.18
   - apiVersion: v2
     appVersion: 0.1.62-beta.17
-    created: "2023-08-23T14:39:24.119500256Z"
+    created: "2023-08-23T14:54:23.114041721Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4733,7 +4752,7 @@ entries:
     version: 0.1.62-beta.17
   - apiVersion: v2
     appVersion: 0.1.62-beta.16
-    created: "2023-08-23T14:39:24.114141279Z"
+    created: "2023-08-23T14:54:23.104810496Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4765,7 +4784,7 @@ entries:
     version: 0.1.62-beta.16
   - apiVersion: v2
     appVersion: 0.1.62-beta.15
-    created: "2023-08-23T14:39:24.10779907Z"
+    created: "2023-08-23T14:54:23.098545507Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4797,7 +4816,7 @@ entries:
     version: 0.1.62-beta.15
   - apiVersion: v2
     appVersion: 0.1.62-beta.14
-    created: "2023-08-23T14:39:24.102465694Z"
+    created: "2023-08-23T14:54:23.091981904Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4829,7 +4848,7 @@ entries:
     version: 0.1.62-beta.14
   - apiVersion: v2
     appVersion: 0.1.62-beta.13
-    created: "2023-08-23T14:39:24.095974379Z"
+    created: "2023-08-23T14:54:23.08495358Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4861,7 +4880,7 @@ entries:
     version: 0.1.62-beta.13
   - apiVersion: v2
     appVersion: 0.1.62-beta.12
-    created: "2023-08-23T14:39:24.090638803Z"
+    created: "2023-08-23T14:54:23.072653013Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4893,7 +4912,7 @@ entries:
     version: 0.1.62-beta.12
   - apiVersion: v2
     appVersion: 0.1.62-beta.11
-    created: "2023-08-23T14:39:24.084319595Z"
+    created: "2023-08-23T14:54:23.066314721Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4925,7 +4944,7 @@ entries:
     version: 0.1.62-beta.11
   - apiVersion: v2
     appVersion: 0.1.62-beta.10
-    created: "2023-08-23T14:39:24.078944117Z"
+    created: "2023-08-23T14:54:23.058143944Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4957,7 +4976,7 @@ entries:
     version: 0.1.62-beta.10
   - apiVersion: v2
     appVersion: 0.1.62-beta.9
-    created: "2023-08-23T14:39:24.212276118Z"
+    created: "2023-08-23T14:54:23.219709393Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -4989,7 +5008,7 @@ entries:
     version: 0.1.62-beta.9
   - apiVersion: v2
     appVersion: 0.1.62-beta.8
-    created: "2023-08-23T14:39:24.206093814Z"
+    created: "2023-08-23T14:54:23.213456105Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5021,7 +5040,7 @@ entries:
     version: 0.1.62-beta.8
   - apiVersion: v2
     appVersion: 0.1.62-beta.7
-    created: "2023-08-23T14:39:24.200749738Z"
+    created: "2023-08-23T14:54:23.205949459Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5053,7 +5072,7 @@ entries:
     version: 0.1.62-beta.7
   - apiVersion: v2
     appVersion: 0.1.62-beta.6
-    created: "2023-08-23T14:39:24.194503232Z"
+    created: "2023-08-23T14:54:23.199625067Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5085,7 +5104,7 @@ entries:
     version: 0.1.62-beta.6
   - apiVersion: v2
     appVersion: 0.1.62-beta.5
-    created: "2023-08-23T14:39:24.189096453Z"
+    created: "2023-08-23T14:54:23.189902819Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5117,7 +5136,7 @@ entries:
     version: 0.1.62-beta.5
   - apiVersion: v2
     appVersion: 0.1.62-beta.4
-    created: "2023-08-23T14:39:24.182825746Z"
+    created: "2023-08-23T14:54:23.183595328Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5149,7 +5168,7 @@ entries:
     version: 0.1.62-beta.4
   - apiVersion: v2
     appVersion: 0.1.62-beta.3
-    created: "2023-08-23T14:39:24.177455669Z"
+    created: "2023-08-23T14:54:23.176127584Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5181,7 +5200,7 @@ entries:
     version: 0.1.62-beta.3
   - apiVersion: v2
     appVersion: 0.1.62-beta.2
-    created: "2023-08-23T14:39:24.142468314Z"
+    created: "2023-08-23T14:54:23.134069245Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5213,7 +5232,7 @@ entries:
     version: 0.1.62-beta.2
   - apiVersion: v2
     appVersion: 0.1.62-beta.1
-    created: "2023-08-23T14:39:24.071593175Z"
+    created: "2023-08-23T14:54:23.051892156Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5245,7 +5264,7 @@ entries:
     version: 0.1.62-beta.1
   - apiVersion: v2
     appVersion: 0.1.61
-    created: "2023-08-23T14:39:24.066197896Z"
+    created: "2023-08-23T14:54:23.043561172Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5277,7 +5296,7 @@ entries:
     version: 0.1.61
   - apiVersion: v2
     appVersion: 0.1.60
-    created: "2023-08-23T14:39:24.059799385Z"
+    created: "2023-08-23T14:54:23.036011924Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5309,7 +5328,7 @@ entries:
     version: 0.1.60
   - apiVersion: v2
     appVersion: 0.1.40
-    created: "2023-08-23T14:39:24.054443708Z"
+    created: "2023-08-23T14:54:23.02856578Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5339,7 +5358,7 @@ entries:
     version: 0.1.40
   - apiVersion: v2
     appVersion: 0.1.39
-    created: "2023-08-23T14:39:24.048501612Z"
+    created: "2023-08-23T14:54:23.022846417Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5369,7 +5388,7 @@ entries:
     version: 0.1.39
   - apiVersion: v2
     appVersion: 0.1.38
-    created: "2023-08-23T14:39:24.043552749Z"
+    created: "2023-08-23T14:54:23.016397519Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5399,7 +5418,7 @@ entries:
     version: 0.1.38
   - apiVersion: v2
     appVersion: 0.1.36
-    created: "2023-08-23T14:39:24.037673755Z"
+    created: "2023-08-23T14:54:23.010377642Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5429,7 +5448,7 @@ entries:
     version: 0.1.36
   - apiVersion: v2
     appVersion: 0.1.35
-    created: "2023-08-23T14:39:24.03267839Z"
+    created: "2023-08-23T14:54:23.000593791Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5459,7 +5478,7 @@ entries:
     version: 0.1.35
   - apiVersion: v2
     appVersion: 0.1.34
-    created: "2023-08-23T14:39:24.026720193Z"
+    created: "2023-08-23T14:54:22.994675018Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5489,7 +5508,7 @@ entries:
     version: 0.1.34
   - apiVersion: v2
     appVersion: 0.1.32
-    created: "2023-08-23T14:39:24.021652226Z"
+    created: "2023-08-23T14:54:22.987457185Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5519,7 +5538,7 @@ entries:
     version: 0.1.32
   - apiVersion: v2
     appVersion: 0.1.31
-    created: "2023-08-23T14:39:24.015574825Z"
+    created: "2023-08-23T14:54:22.981694019Z"
     dependencies:
     - name: apm-hub
       repository: https://flanksource.github.io/charts
@@ -5550,7 +5569,7 @@ entries:
   mission-control-tenant:
   - apiVersion: v2
     appVersion: 1.0.24
-    created: "2023-08-23T14:39:24.848448918Z"
+    created: "2023-08-23T14:54:23.924043999Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5566,7 +5585,7 @@ entries:
     version: 1.0.24
   - apiVersion: v2
     appVersion: 1.0.23
-    created: "2023-08-23T14:39:24.846456952Z"
+    created: "2023-08-23T14:54:23.921529761Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5582,7 +5601,7 @@ entries:
     version: 1.0.23
   - apiVersion: v2
     appVersion: 1.0.22
-    created: "2023-08-23T14:39:24.843625459Z"
+    created: "2023-08-23T14:54:23.91894654Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5598,7 +5617,7 @@ entries:
     version: 1.0.22
   - apiVersion: v2
     appVersion: 1.0.21
-    created: "2023-08-23T14:39:24.841357484Z"
+    created: "2023-08-23T14:54:23.915681399Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5614,7 +5633,7 @@ entries:
     version: 1.0.21
   - apiVersion: v2
     appVersion: 1.0.20
-    created: "2023-08-23T14:39:24.839284615Z"
+    created: "2023-08-23T14:54:23.912627303Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5630,7 +5649,7 @@ entries:
     version: 1.0.20
   - apiVersion: v2
     appVersion: 1.0.19
-    created: "2023-08-23T14:39:24.835269483Z"
+    created: "2023-08-23T14:54:23.907179136Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5646,7 +5665,7 @@ entries:
     version: 1.0.19
   - apiVersion: v2
     appVersion: 1.0.18
-    created: "2023-08-23T14:39:24.833258517Z"
+    created: "2023-08-23T14:54:23.904713685Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5662,7 +5681,7 @@ entries:
     version: 1.0.18
   - apiVersion: v2
     appVersion: 1.0.17
-    created: "2023-08-23T14:39:24.829962208Z"
+    created: "2023-08-23T14:54:23.902156057Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5678,7 +5697,7 @@ entries:
     version: 1.0.17
   - apiVersion: v2
     appVersion: 1.0.16
-    created: "2023-08-23T14:39:24.827929841Z"
+    created: "2023-08-23T14:54:23.898210595Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5694,7 +5713,7 @@ entries:
     version: 1.0.16
   - apiVersion: v2
     appVersion: 1.0.15
-    created: "2023-08-23T14:39:24.825951275Z"
+    created: "2023-08-23T14:54:23.895848617Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5710,7 +5729,7 @@ entries:
     version: 1.0.15
   - apiVersion: v2
     appVersion: 1.0.14
-    created: "2023-08-23T14:39:24.823937709Z"
+    created: "2023-08-23T14:54:23.89347794Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5726,7 +5745,7 @@ entries:
     version: 1.0.14
   - apiVersion: v2
     appVersion: 1.0.13
-    created: "2023-08-23T14:39:24.821926443Z"
+    created: "2023-08-23T14:54:23.891087569Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5742,7 +5761,7 @@ entries:
     version: 1.0.13
   - apiVersion: v2
     appVersion: 1.0.12
-    created: "2023-08-23T14:39:24.819888975Z"
+    created: "2023-08-23T14:54:23.88872849Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5758,7 +5777,7 @@ entries:
     version: 1.0.12
   - apiVersion: v2
     appVersion: 1.0.11
-    created: "2023-08-23T14:39:24.817253988Z"
+    created: "2023-08-23T14:54:23.886196456Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5774,7 +5793,7 @@ entries:
     version: 1.0.11
   - apiVersion: v2
     appVersion: 1.0.10
-    created: "2023-08-23T14:39:24.814808608Z"
+    created: "2023-08-23T14:54:23.881381623Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5790,7 +5809,7 @@ entries:
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.9
-    created: "2023-08-23T14:39:24.859622487Z"
+    created: "2023-08-23T14:54:23.938841807Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5806,7 +5825,7 @@ entries:
     version: 1.0.9
   - apiVersion: v2
     appVersion: 1.0.8
-    created: "2023-08-23T14:39:24.856455082Z"
+    created: "2023-08-23T14:54:23.936300775Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5822,7 +5841,7 @@ entries:
     version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.7
-    created: "2023-08-23T14:39:24.854474617Z"
+    created: "2023-08-23T14:54:23.932075487Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5838,7 +5857,7 @@ entries:
     version: 1.0.7
   - apiVersion: v2
     appVersion: 1.0.5
-    created: "2023-08-23T14:39:24.85243465Z"
+    created: "2023-08-23T14:54:23.929388493Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5854,7 +5873,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2023-08-23T14:39:24.850458184Z"
+    created: "2023-08-23T14:54:23.926650814Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5870,7 +5889,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2023-08-23T14:39:24.837282349Z"
+    created: "2023-08-23T14:54:23.909736563Z"
     dependencies:
     - name: vcluster
       repository: https://charts.loft.sh
@@ -5884,4 +5903,4 @@ entries:
     urls:
     - mission-control-tenant-1.0.2.tgz
     version: 1.0.2
-generated: "2023-08-23T14:39:23.896173284Z"
+generated: "2023-08-23T14:54:22.844288884Z"
