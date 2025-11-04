@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  postgres:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: "17"
+    created: "2025-11-04T19:12:19.1475819Z"
+    description: A Helm chart for PostgreSQL with automatic upgrade capabilities
+    digest: c3ad1aafe25292c56ab797e371004954a16dc138aff90b45275c4e1e4d706fca
+    home: https://github.com/flanksource/postgres
+    keywords:
+    - postgresql
+    - database
+    - upgrade
+    maintainers:
+    - email: support@flanksource.com
+      name: Flanksource
+      url: https://flanksource.com
+    name: postgres
+    sources:
+    - https://github.com/flanksource/postgres
+    type: application
+    urls:
+    - https://flanksource.github.io/charts/postgres-1.0.5.tgz
+    version: 1.0.5
+generated: "2025-11-04T19:12:19.146768329Z"
