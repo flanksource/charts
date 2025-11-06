@@ -5,7 +5,30 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "17"
-    created: "2025-11-05T10:48:54.183931147Z"
+    created: "2025-11-06T10:18:55.13387329Z"
+    description: A Helm chart for PostgreSQL with automatic upgrade capabilities
+    digest: 8d0874095390a3cca27a1adde146140753a5d06ae7202686ff7a622ee0ece20d
+    home: https://github.com/flanksource/postgres
+    keywords:
+    - postgresql
+    - database
+    - upgrade
+    maintainers:
+    - email: support@flanksource.com
+      name: Flanksource
+      url: https://flanksource.com
+    name: postgres
+    sources:
+    - https://github.com/flanksource/postgres
+    type: application
+    urls:
+    - https://flanksource.github.io/charts/postgres-1.0.12.tgz
+    version: 1.0.12
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: "17"
+    created: "2025-11-06T10:18:55.136592154Z"
     description: A Helm chart for PostgreSQL with automatic upgrade capabilities
     digest: 39ba71dc3c84f3d2ae2a3d7296c2e7783c0c14b01bee6453b9791e3e03d67aef
     home: https://github.com/flanksource/postgres
@@ -28,7 +51,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "17"
-    created: "2025-11-05T10:48:54.182593255Z"
+    created: "2025-11-06T10:18:55.13520757Z"
     description: A Helm chart for PostgreSQL with automatic upgrade capabilities
     digest: 5bb28ae3c6637c7ce40676563d323f00c6f22237d640c8a76fa22f84d3b6dd66
     home: https://github.com/flanksource/postgres
@@ -51,7 +74,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "17"
-    created: "2025-11-05T10:48:54.18182991Z"
+    created: "2025-11-06T10:18:55.134543952Z"
     description: A Helm chart for PostgreSQL with automatic upgrade capabilities
     digest: c3ad1aafe25292c56ab797e371004954a16dc138aff90b45275c4e1e4d706fca
     home: https://github.com/flanksource/postgres
@@ -70,4 +93,4 @@ entries:
     urls:
     - https://flanksource.github.io/charts/postgres-1.0.5.tgz
     version: 1.0.5
-generated: "2025-11-05T10:48:54.180863973Z"
+generated: "2025-11-06T10:18:55.131525732Z"
