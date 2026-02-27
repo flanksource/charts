@@ -1,0 +1,39 @@
+apiVersion: v2
+name: mission-control
+description: A Helm chart for flanksource mission control
+type: application
+version: 0.1.0
+appVersion: "0.0.10"
+icon: https://github.com/flanksource.png
+maintainers:
+  - name: Flanksource
+dependencies:
+  - name: apm-hub
+    version: ">= 0.0.20"
+    repository: https://flanksource.github.io/charts
+    condition: apm-hub.enabled
+  - name: config-db
+    version: "0.0.1195"
+    repository: https://flanksource.github.io/charts
+  - name: canary-checker
+    version: "1.1.2"
+    repository: https://flanksource.github.io/charts
+  - name: flanksource-ui
+    version: "1.4.193"
+    repository: https://flanksource.github.io/charts
+    condition: flanksource-ui.enabled
+  - name: kratos
+    version: "0.32.0"
+    repository: https://k8s.ory.sh/helm/charts
+    condition: kratos.enabled
+    import-values:
+      - child: secret
+        parent: kratossecret
+  - name: mission-control-kubernetes-view
+    version: ">= 0.1.37"
+    repository: https://flanksource.github.io/charts
+    condition: views.kubernetes
+  - name: mission-control-misc-playbooks
+    version: "0.1.1"
+    repository: https://flanksource.github.io/charts
+    condition: mission-control-misc-playbooks.enabled

@@ -1,0 +1,20 @@
+apiVersion: v2
+name: mission-control-agent
+description: A Helm chart for flanksource mission control agent
+type: application
+version: 0.1.0
+appVersion: "0.0.10"
+maintainers:
+  - name: Flanksource
+dependencies:
+  - name: config-db
+    version: "0.0.1195"
+    repository: https://flanksource.github.io/charts
+  - name: canary-checker
+    version: "1.1.2"
+    repository: https://flanksource.github.io/charts
+  - name: mission-control-watchtower
+    version: "0.1.34"
+    repository: https://flanksource.github.io/charts
+    alias: pushTelemetry
+    condition: pushTelemetry.enabled

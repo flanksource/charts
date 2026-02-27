@@ -1,0 +1,128 @@
+From cd220f604f5315f9b91dafe3386f4c77e07ed3fc Mon Sep 17 00:00:00 2001
+From: "github-actions[bot]" <github-actions[bot]@users.noreply.github.com>
+Date: Fri, 27 Feb 2026 05:11:12 +0000
+Subject: [PATCH] Update chart dependencies and add auto-update workflow
+
+- Update config-db to 0.0.1195
+- Update canary-checker to 1.1.2
+- Add repository_dispatch workflow handler for automated dependency updates
+---
+ .github/workflows/dependency-update.yml | 70 +++++++++++++++++++++++++
+ agent-chart/Chart.yaml                  |  4 +-
+ chart/Chart.yaml                        |  4 +-
+ 3 files changed, 74 insertions(+), 4 deletions(-)
+ create mode 100644 .github/workflows/dependency-update.yml
+
+diff --git a/.github/workflows/dependency-update.yml b/.github/workflows/dependency-update.yml
+new file mode 100644
+index 00000000..926714d1
+--- /dev/null
++++ b/.github/workflows/dependency-update.yml
+@@ -0,0 +1,70 @@
++name: Update Dependencies from Charts Repository
++
++on:
++  repository_dispatch:
++    types: [dependency-update]
++
++jobs:
++  update-dependencies:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout repository
++        uses: actions/checkout@v4
++
++      - name: Update dependencies based on payload
++        run: |
++          echo "Received dependency update notification"
++          echo "Config DB updated: ${{ github.event.client_payload.config_db_updated }}"
++          echo "Config DB version: ${{ github.event.client_payload.config_db_version }}"
++          echo "Canary Checker updated: ${{ github.event.client_payload.canary_checker_updated }}"
++          echo "Canary Checker version: ${{ github.event.client_payload.canary_checker_version }}"
++
++          # Update config-db version if updated
++          if [ "${{ github.event.client_payload.config_db_updated }}" == "true" ]; then
++            VERSION="${{ github.event.client_payload.config_db_version }}"
++            echo "Updating config-db to version: $VERSION"
++            sed -i "s/version: \"0\\.0\\.[0-9]\\+\"/version: \"$VERSION\"/" chart/Chart.yaml agent-chart/Chart.yaml
++          fi
++
++          # Update canary-checker version if updated
++          if [ "${{ github.event.client_payload.canary_checker_updated }}" == "true" ]; then
++            VERSION="${{ github.event.client_payload.canary_checker_version }}"
++            echo "Updating canary-checker to version: $VERSION"
++            sed -i "/name: canary-checker/,/repository:/ s/version: \"[^\"]*\"/version: \"$VERSION\"/" chart/Chart.yaml agent-chart/Chart.yaml
++          fi
++
++      - name: Check for changes
++        id: check-changes
++        run: |
++          if git diff --quiet; then
++            echo "has_changes=false" >> $GITHUB_OUTPUT
++            echo "No changes detected"
++          else
++            echo "has_changes=true" >> $GITHUB_OUTPUT
++            echo "Changes detected:"
++            git diff
++          fi
++
++      - name: Create Pull Request
++        if: steps.check-changes.outputs.has_changes == 'true'
++        uses: peter-evans/create-pull-request@v6
++        with:
++          token: ${{ secrets.GITHUB_TOKEN }}
++          branch: dependency-update-${{ github.event.client_payload.triggered_by }}
++          delete-branch: true
++          title: "Update chart dependencies"
++          body: |
++            Automated dependency update triggered by flanksource/charts repository.
++            
++            Changes:
++            - Config DB: ${{ github.event.client_payload.config_db_updated == 'true' && github.event.client_payload.config_db_version || 'no update' }}
++            - Canary Checker: ${{ github.event.client_payload.canary_checker_updated == 'true' && github.event.client_payload.canary_checker_version || 'no update' }}
++            
++            Triggered by: ${{ github.event.client_payload.triggered_by }}
++          commit-message: |
++            Update chart dependencies
++            
++            - Config DB: ${{ github.event.client_payload.config_db_version }}
++            - Canary Checker: ${{ github.event.client_payload.canary_checker_version }}
++          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
++          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+diff --git a/agent-chart/Chart.yaml b/agent-chart/Chart.yaml
+index 1a3af671..30519b86 100644
+--- a/agent-chart/Chart.yaml
++++ b/agent-chart/Chart.yaml
+@@ -8,10 +8,10 @@ maintainers:
+   - name: Flanksource
+ dependencies:
+   - name: config-db
+-    version: "0.0.1190"
++    version: "0.0.1195"
+     repository: https://flanksource.github.io/charts
+   - name: canary-checker
+-    version: "1.1.3-beta.86"
++    version: "1.1.2"
+     repository: https://flanksource.github.io/charts
+   - name: mission-control-watchtower
+     version: "0.1.34"
+diff --git a/chart/Chart.yaml b/chart/Chart.yaml
+index 9f33fe0a..6c9ef085 100644
+--- a/chart/Chart.yaml
++++ b/chart/Chart.yaml
+@@ -13,10 +13,10 @@ dependencies:
+     repository: https://flanksource.github.io/charts
+     condition: apm-hub.enabled
+   - name: config-db
+-    version: "0.0.1190"
++    version: "0.0.1195"
+     repository: https://flanksource.github.io/charts
+   - name: canary-checker
+-    version: "1.1.3-beta.86"
++    version: "1.1.2"
+     repository: https://flanksource.github.io/charts
+   - name: flanksource-ui
+     version: "1.4.193"
+-- 
+2.53.0
+
