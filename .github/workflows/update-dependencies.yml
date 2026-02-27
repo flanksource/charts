@@ -1,0 +1,85 @@
+name: Update Mission Control Chart Dependencies
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - 'config-db-*.tgz'
+      - 'canary-checker-*.tgz'
+      - 'index.yaml'
+
+jobs:
+  detect-updates:
+    runs-on: ubuntu-latest
+    outputs:
+      config-db-updated: ${{ steps.check-updates.outputs.config-db-updated }}
+      canary-checker-updated: ${{ steps.check-updates.outputs.canary-checker-updated }}
+      config-db-version: ${{ steps.check-updates.outputs.config-db-version }}
+      canary-checker-version: ${{ steps.check-updates.outputs.canary-checker-version }}
+    steps:
+      - name: Checkout charts repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check for dependency updates
+        id: check-updates
+        run: |
+          # Check if config-db was updated in this push
+          if git diff --name-only HEAD^ HEAD | grep -q "^config-db-.*\.tgz$"; then
+            echo "config-db-updated=true" >> $GITHUB_OUTPUT
+            # Extract the latest config-db version from the commit
+            CONFIG_DB_FILE=$(git diff --name-only HEAD^ HEAD | grep "^config-db-.*\.tgz$" | sort -V | tail -1)
+            if [ -n "$CONFIG_DB_FILE" ]; then
+              CONFIG_DB_VERSION=$(echo "$CONFIG_DB_FILE" | sed -E 's/config-db-(.*)\.tgz/\1/')
+              echo "config-db-version=$CONFIG_DB_VERSION" >> $GITHUB_OUTPUT
+              echo "Detected config-db update to version: $CONFIG_DB_VERSION"
+            fi
+          else
+            echo "config-db-updated=false" >> $GITHUB_OUTPUT
+          fi
+
+          # Check if canary-checker was updated in this push
+          if git diff --name-only HEAD^ HEAD | grep -q "^canary-checker-.*\.tgz$"; then
+            echo "canary-checker-updated=true" >> $GITHUB_OUTPUT
+            # Extract the latest canary-checker version from the commit
+            CANARY_CHECKER_FILE=$(git diff --name-only HEAD^ HEAD | grep "^canary-checker-.*\.tgz$" | sort -V | tail -1)
+            if [ -n "$CANARY_CHECKER_FILE" ]; then
+              CANARY_CHECKER_VERSION=$(echo "$CANARY_CHECKER_FILE" | sed -E 's/canary-checker-(.*)\.tgz/\1/')
+              echo "canary-checker-version=$CANARY_CHECKER_VERSION" >> $GITHUB_OUTPUT
+              echo "Detected canary-checker update to version: $CANARY_CHECKER_VERSION"
+            fi
+          else
+            echo "canary-checker-updated=false" >> $GITHUB_OUTPUT
+          fi
+
+  trigger-mission-control-update:
+    runs-on: ubuntu-latest
+    needs: detect-updates
+    if: needs.detect-updates.outputs.config-db-updated == 'true' || needs.detect-updates.outputs.canary-checker-updated == 'true'
+    steps:
+      - name: Trigger mission-control-chart dependency update
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.FLANKBOT }}
+          repository: flanksource/mission-control-chart
+          event-type: dependency-update
+          client-payload: |
+            {
+              "config_db_updated": "${{ needs.detect-updates.outputs.config-db-updated }}",
+              "config_db_version": "${{ needs.detect-updates.outputs.config-db-version }}",
+              "canary_checker_updated": "${{ needs.detect-updates.outputs.canary-checker-updated }}",
+              "canary_checker_version": "${{ needs.detect-updates.outputs.canary-checker-version }}",
+              "triggered_by": "${{ github.sha }}"
+            }
+
+      - name: Log update trigger
+        run: |
+          echo "Triggered dependency update in mission-control-chart"
+          if [ "${{ needs.detect-updates.outputs.config-db-updated }}" == "true" ]; then
+            echo "  - config-db updated to: ${{ needs.detect-updates.outputs.config-db-version }}"
+          fi
+          if [ "${{ needs.detect-updates.outputs.canary-checker-updated }}" == "true" ]; then
+            echo "  - canary-checker updated to: ${{ needs.detect-updates.outputs.canary-checker-version }}"
+          fi
