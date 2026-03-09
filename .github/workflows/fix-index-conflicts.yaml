@@ -51,20 +51,23 @@ jobs:
               continue
             fi
 
-            # Check if the PR modifies only index.yaml
-            changed_files=$(gh api repos/${{ github.repository }}/pulls/$pr/files --jq '.[].filename')
-            echo "Changed files: $changed_files"
-
-            if [ "$changed_files" != "index.yaml" ]; then
-              echo "PR changes files other than index.yaml, skipping"
-              continue
-            fi
-
-            echo "Fixing index.yaml conflict for PR #$pr (branch: $head_ref)"
+            echo "Checking conflicting files for PR #$pr (branch: $head_ref)"
 
             git fetch origin main "$head_ref"
             git checkout "origin/$head_ref"
             git checkout -B "$head_ref"
+
+            # Attempt merge to find which files actually conflict
+            git merge --no-commit --no-ff origin/main 2>/dev/null || true
+            conflicting=$(git diff --name-only --diff-filter=U)
+            git merge --abort 2>/dev/null || true
+
+            echo "Conflicting files: $conflicting"
+
+            if [ "$conflicting" != "index.yaml" ]; then
+              echo "Conflict is not only in index.yaml, skipping"
+              continue
+            fi
 
             git checkout origin/main -- index.yaml
             helm repo index --merge index.yaml .
