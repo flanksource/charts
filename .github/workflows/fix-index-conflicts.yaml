@@ -78,7 +78,9 @@ jobs:
             git commit -m "chore: merge $default_branch and regenerate index.yaml"
             git push origin "$head_ref"
 
-            gh pr merge "$pr" --repo ${{ github.repository }} --squash
+            # Wait for GitHub to recompute mergeability after push
+            sleep 10
+            gh pr merge "$pr" --repo ${{ github.repository }} --squash || echo "Failed to merge PR #$pr, will retry next run"
 
             echo "--- Done with PR #$pr ---"
           done
