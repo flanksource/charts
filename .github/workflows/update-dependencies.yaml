@@ -5,6 +5,9 @@ on:
     branches:
       - gh-pages
 
+permissions:
+  contents: read
+
 jobs:
   update-deps:
     runs-on: ubuntu-latest
