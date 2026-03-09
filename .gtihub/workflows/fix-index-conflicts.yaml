@@ -1,0 +1,106 @@
+name: Auto-resolve index.yaml conflicts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  collect-prs:
+    runs-on: ubuntu-latest
+    outputs:
+      pr_numbers: ${{ steps.prs.outputs.numbers }}
+    steps:
+      - name: Get PR numbers
+        id: prs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          numbers=$(gh pr list --repo ${{ github.repository }} --state open --json number --jq '[.[].number]')
+          echo "numbers=$numbers" >> "$GITHUB_OUTPUT"
+
+  resolve-index-conflict:
+    needs: collect-prs
+    if: needs.collect-prs.outputs.pr_numbers != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pr_number: ${{ fromJson(needs.collect-prs.outputs.pr_numbers) }}
+      fail-fast: false
+    steps:
+      - name: Check for merge conflict
+        id: conflict-check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr_info=$(gh api repos/${{ github.repository }}/pulls/${{ matrix.pr_number }})
+          mergeable_state=$(echo "$pr_info" | jq -r '.mergeable_state')
+          mergeable=$(echo "$pr_info" | jq -r '.mergeable')
+          head_ref=$(echo "$pr_info" | jq -r '.head.ref')
+
+          echo "head_ref=$head_ref" >> "$GITHUB_OUTPUT"
+
+          if [ "$mergeable" = "false" ] && [ "$mergeable_state" = "dirty" ]; then
+            echo "has_conflict=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_conflict=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout PR branch
+        if: steps.conflict-check.outputs.has_conflict == 'true'
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ steps.conflict-check.outputs.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check conflict is only in index.yaml
+        if: steps.conflict-check.outputs.has_conflict == 'true'
+        id: check-files
+        run: |
+          git fetch origin main
+
+          # Use git merge to detect conflicting files
+          git merge --no-commit --no-ff origin/main 2>/dev/null || true
+          conflicting=$(git diff --name-only --diff-filter=U)
+          git merge --abort 2>/dev/null || true
+
+          if [ -z "$conflicting" ]; then
+            echo "No conflicting files found"
+            echo "only_index=false" >> "$GITHUB_OUTPUT"
+          elif [ "$conflicting" = "index.yaml" ]; then
+            echo "Conflict is only in index.yaml"
+            echo "only_index=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Conflicts in files other than index.yaml: $conflicting"
+            echo "only_index=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebase and regenerate index.yaml
+        if: steps.check-files.outputs.only_index == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Take main's version of index.yaml to use as the merge base
+          git checkout origin/main -- index.yaml
+
+          # Regenerate index incorporating existing entries and any new .tgz files
+          helm repo index --merge index.yaml .
+
+          git add index.yaml
+          git commit -m "chore: regenerate index.yaml after rebase"
+          git push
+
+      - name: Enable auto-merge
+        if: steps.check-files.outputs.only_index == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge ${{ matrix.pr_number }} \
+            --repo ${{ github.repository }} \
+            --auto --merge
