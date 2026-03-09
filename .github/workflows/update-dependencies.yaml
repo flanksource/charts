@@ -24,6 +24,7 @@ jobs:
 
           CONFIG_DB_VERSION=""
           CANARY_CHECKER_VERSION=""
+          FLANKSOURCE_UI_VERSION=""
 
           for FILE in $CHANGED_FILES; do
             BASENAME=$(basename "$FILE")
@@ -34,11 +35,14 @@ jobs:
             elif [[ "$BASENAME" =~ ^canary-checker-([0-9].*)\.tgz$ ]]; then
               CANARY_CHECKER_VERSION="${BASH_REMATCH[1]}"
               echo "Detected canary-checker version: $CANARY_CHECKER_VERSION"
+            elif [[ "$BASENAME" =~ ^flanksource-ui-([0-9].*)\.tgz$ ]]; then
+              FLANKSOURCE_UI_VERSION="${BASH_REMATCH[1]}"
+              echo "Detected flanksource-ui version: $FLANKSOURCE_UI_VERSION"
             fi
           done
 
-          if [[ -z "$CONFIG_DB_VERSION" && -z "$CANARY_CHECKER_VERSION" ]]; then
-            echo "No config-db or canary-checker charts updated"
+          if [[ -z "$CONFIG_DB_VERSION" && -z "$CANARY_CHECKER_VERSION" && -z "$FLANKSOURCE_UI_VERSION" ]]; then
+            echo "No config-db, canary-checker, or flanksource-ui charts updated"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -46,6 +50,7 @@ jobs:
 
           echo "config_db_version=$CONFIG_DB_VERSION" >> "$GITHUB_OUTPUT"
           echo "canary_checker_version=$CANARY_CHECKER_VERSION" >> "$GITHUB_OUTPUT"
+          echo "flanksource_ui_version=$FLANKSOURCE_UI_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Clone mission-control-chart
         if: steps.detect.outputs.skip == 'false'
@@ -100,10 +105,12 @@ jobs:
 
           CONFIG_DB_VERSION="${{ steps.detect.outputs.config_db_version }}"
           CANARY_CHECKER_VERSION="${{ steps.detect.outputs.canary_checker_version }}"
+          FLANKSOURCE_UI_VERSION="${{ steps.detect.outputs.flanksource_ui_version }}"
 
           for CHART_FILE in chart/Chart.yaml agent-chart/Chart.yaml; do
             update_dep "$CHART_FILE" "config-db" "$CONFIG_DB_VERSION"
             update_dep "$CHART_FILE" "canary-checker" "$CANARY_CHECKER_VERSION"
+            update_dep "$CHART_FILE" "flanksource-ui" "$FLANKSOURCE_UI_VERSION"
           done
 
           echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
@@ -116,6 +123,10 @@ jobs:
           if [[ -n "$CANARY_CHECKER_VERSION" ]]; then
             [[ -n "$TITLE_PARTS" ]] && TITLE_PARTS="$TITLE_PARTS, "
             TITLE_PARTS="${TITLE_PARTS}canary-checker to $CANARY_CHECKER_VERSION"
+          fi
+          if [[ -n "$FLANKSOURCE_UI_VERSION" ]]; then
+            [[ -n "$TITLE_PARTS" ]] && TITLE_PARTS="$TITLE_PARTS, "
+            TITLE_PARTS="${TITLE_PARTS}flanksource-ui to $FLANKSOURCE_UI_VERSION"
           fi
           echo "pr_title=chore: update $TITLE_PARTS" >> "$GITHUB_OUTPUT"
 
