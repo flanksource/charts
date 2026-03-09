@@ -30,8 +30,17 @@ jobs:
           for pr in $pr_numbers; do
             echo "--- Processing PR #$pr ---"
 
-            pr_info=$(gh api repos/${{ github.repository }}/pulls/$pr)
-            mergeable=$(echo "$pr_info" | jq -r '.mergeable')
+            # Poll until GitHub computes mergeability (first call returns null)
+            for i in $(seq 1 5); do
+              pr_info=$(gh api repos/${{ github.repository }}/pulls/$pr)
+              mergeable=$(echo "$pr_info" | jq -r '.mergeable')
+              if [ "$mergeable" != "null" ]; then
+                break
+              fi
+              echo "Mergeability not yet computed, retrying in 5s (attempt $i/5)"
+              sleep 5
+            done
+
             mergeable_state=$(echo "$pr_info" | jq -r '.mergeable_state')
             head_ref=$(echo "$pr_info" | jq -r '.head.ref')
 
