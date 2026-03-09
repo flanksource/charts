@@ -58,26 +58,27 @@ jobs:
             git checkout "origin/$head_ref"
             git checkout -B "$head_ref"
 
-            # Attempt merge to find which files actually conflict
+            # Start merge to find which files actually conflict
             git merge --no-commit --no-ff origin/$default_branch 2>/dev/null || true
             conflicting=$(git diff --name-only --diff-filter=U)
-            git merge --abort 2>/dev/null || true
 
             echo "Conflicting files: $conflicting"
 
             if [ "$conflicting" != "index.yaml" ]; then
               echo "Conflict is not only in index.yaml, skipping"
+              git merge --abort 2>/dev/null || true
               continue
             fi
 
+            # Resolve the conflict by regenerating index.yaml
             git checkout origin/$default_branch -- index.yaml
             helm repo index --merge index.yaml .
 
             git add index.yaml
-            git commit -m "chore: regenerate index.yaml after rebase"
+            git commit -m "chore: merge $default_branch and regenerate index.yaml"
             git push origin "$head_ref"
 
-            gh pr merge "$pr" --repo ${{ github.repository }} --auto --merge
+            gh pr merge "$pr" --repo ${{ github.repository }} --squash
 
             echo "--- Done with PR #$pr ---"
           done
