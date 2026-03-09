@@ -25,6 +25,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          default_branch=$(gh api repos/${{ github.repository }} --jq '.default_branch')
           pr_numbers=$(gh pr list --repo ${{ github.repository }} --state open --json number --jq '.[].number')
 
           for pr in $pr_numbers; do
@@ -53,12 +54,12 @@ jobs:
 
             echo "Checking conflicting files for PR #$pr (branch: $head_ref)"
 
-            git fetch origin main "$head_ref"
+            git fetch origin "$default_branch" "$head_ref"
             git checkout "origin/$head_ref"
             git checkout -B "$head_ref"
 
             # Attempt merge to find which files actually conflict
-            git merge --no-commit --no-ff origin/main 2>/dev/null || true
+            git merge --no-commit --no-ff origin/$default_branch 2>/dev/null || true
             conflicting=$(git diff --name-only --diff-filter=U)
             git merge --abort 2>/dev/null || true
 
@@ -69,7 +70,7 @@ jobs:
               continue
             fi
 
-            git checkout origin/main -- index.yaml
+            git checkout origin/$default_branch -- index.yaml
             helm repo index --merge index.yaml .
 
             git add index.yaml
