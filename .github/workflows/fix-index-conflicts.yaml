@@ -1,0 +1,84 @@
+name: Auto-resolve index.yaml conflicts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  resolve-index-conflicts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve conflicting PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          default_branch=$(gh api repos/${{ github.repository }} --jq '.default_branch')
+          pr_numbers=$(gh pr list --repo ${{ github.repository }} --state open --json number --jq '.[].number')
+
+          for pr in $pr_numbers; do
+            echo "--- Processing PR #$pr ---"
+
+            # Poll until GitHub computes mergeability (first call returns null)
+            for i in $(seq 1 5); do
+              pr_info=$(gh api repos/${{ github.repository }}/pulls/$pr)
+              mergeable=$(echo "$pr_info" | jq -r '.mergeable')
+              if [ "$mergeable" != "null" ]; then
+                break
+              fi
+              echo "Mergeability not yet computed, retrying in 5s (attempt $i/5)"
+              sleep 5
+            done
+
+            mergeable_state=$(echo "$pr_info" | jq -r '.mergeable_state')
+            head_ref=$(echo "$pr_info" | jq -r '.head.ref')
+
+            echo "PR #$pr: mergeable=$mergeable mergeable_state=$mergeable_state head_ref=$head_ref"
+
+            if [ "$mergeable" != "false" ] || [ "$mergeable_state" != "dirty" ]; then
+              echo "No conflict, skipping"
+              continue
+            fi
+
+            echo "Checking conflicting files for PR #$pr (branch: $head_ref)"
+
+            git fetch origin "$default_branch" "$head_ref"
+            git checkout "origin/$head_ref"
+            git checkout -B "$head_ref"
+
+            # Start merge to find which files actually conflict
+            git merge --no-commit --no-ff origin/$default_branch 2>/dev/null || true
+            conflicting=$(git diff --name-only --diff-filter=U)
+
+            echo "Conflicting files: $conflicting"
+
+            if [ "$conflicting" != "index.yaml" ]; then
+              echo "Conflict is not only in index.yaml, skipping"
+              git merge --abort 2>/dev/null || true
+              continue
+            fi
+
+            # Resolve the conflict by regenerating index.yaml
+            git checkout origin/$default_branch -- index.yaml
+            helm repo index --merge index.yaml .
+
+            git add index.yaml
+            git commit -m "chore: merge $default_branch and regenerate index.yaml"
+            git push origin "$head_ref"
+
+            gh pr merge "$pr" --repo ${{ github.repository }} --squash
+
+            echo "--- Done with PR #$pr ---"
+          done
