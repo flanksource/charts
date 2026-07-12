@@ -25,7 +25,7 @@ jobs:
           CONFIG_DB_VERSION=""
           CANARY_CHECKER_VERSION=""
           FLANKSOURCE_UI_VERSION=""
-          FACET_CHARTS=""
+          FACET_VERSION=""
 
           for FILE in $CHANGED_FILES; do
             BASENAME=$(basename "$FILE")
@@ -39,16 +39,14 @@ jobs:
             elif [[ "$BASENAME" =~ ^flanksource-ui-([0-9].*)\.tgz$ ]]; then
               FLANKSOURCE_UI_VERSION="${BASH_REMATCH[1]}"
               echo "Detected flanksource-ui version: $FLANKSOURCE_UI_VERSION"
-            elif [[ "$BASENAME" =~ ^(facet-.*)-([0-9]+\.[0-9]+\.[0-9]+.*)\.tgz$ ]]; then
-              FACET_NAME="${BASH_REMATCH[1]}"
-              FACET_VERSION="${BASH_REMATCH[2]}"
-              FACET_CHARTS="${FACET_CHARTS}${FACET_NAME}=${FACET_VERSION} "
-              echo "Detected $FACET_NAME version: $FACET_VERSION"
+            elif [[ "$BASENAME" =~ ^facet-([0-9].*)\.tgz$ ]]; then
+              FACET_VERSION="${BASH_REMATCH[1]}"
+              echo "Detected facet version: $FACET_VERSION"
             fi
           done
 
-          if [[ -z "$CONFIG_DB_VERSION" && -z "$CANARY_CHECKER_VERSION" && -z "$FLANKSOURCE_UI_VERSION" && -z "$FACET_CHARTS" ]]; then
-            echo "No config-db, canary-checker, flanksource-ui, or facet-* charts updated"
+          if [[ -z "$CONFIG_DB_VERSION" && -z "$CANARY_CHECKER_VERSION" && -z "$FLANKSOURCE_UI_VERSION" && -z "$FACET_VERSION" ]]; then
+            echo "No config-db, canary-checker, flanksource-ui, or facet charts updated"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -57,7 +55,7 @@ jobs:
           echo "config_db_version=$CONFIG_DB_VERSION" >> "$GITHUB_OUTPUT"
           echo "canary_checker_version=$CANARY_CHECKER_VERSION" >> "$GITHUB_OUTPUT"
           echo "flanksource_ui_version=$FLANKSOURCE_UI_VERSION" >> "$GITHUB_OUTPUT"
-          echo "facet_charts=$FACET_CHARTS" >> "$GITHUB_OUTPUT"
+          echo "facet_version=$FACET_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Clone mission-control-chart
         if: steps.detect.outputs.skip == 'false'
@@ -113,16 +111,14 @@ jobs:
           CONFIG_DB_VERSION="${{ steps.detect.outputs.config_db_version }}"
           CANARY_CHECKER_VERSION="${{ steps.detect.outputs.canary_checker_version }}"
           FLANKSOURCE_UI_VERSION="${{ steps.detect.outputs.flanksource_ui_version }}"
-          FACET_CHARTS="${{ steps.detect.outputs.facet_charts }}"
+          FACET_VERSION="${{ steps.detect.outputs.facet_version }}"
 
           for CHART_FILE in chart/Chart.yaml agent-chart/Chart.yaml; do
             update_dep "$CHART_FILE" "config-db" "$CONFIG_DB_VERSION"
             update_dep "$CHART_FILE" "canary-checker" "$CANARY_CHECKER_VERSION"
             update_dep "$CHART_FILE" "flanksource-ui" "$FLANKSOURCE_UI_VERSION"
-            for FACET_CHART in $FACET_CHARTS; do
-              update_dep "$CHART_FILE" "${FACET_CHART%%=*}" "${FACET_CHART#*=}"
-            done
           done
+          update_dep "chart/Chart.yaml" "facet" "$FACET_VERSION"
 
           echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
 
@@ -139,10 +135,10 @@ jobs:
             [[ -n "$TITLE_PARTS" ]] && TITLE_PARTS="$TITLE_PARTS, "
             TITLE_PARTS="${TITLE_PARTS}flanksource-ui to $FLANKSOURCE_UI_VERSION"
           fi
-          for FACET_CHART in $FACET_CHARTS; do
+          if [[ -n "$FACET_VERSION" ]]; then
             [[ -n "$TITLE_PARTS" ]] && TITLE_PARTS="$TITLE_PARTS, "
-            TITLE_PARTS="${TITLE_PARTS}${FACET_CHART%%=*} to ${FACET_CHART#*=}"
-          done
+            TITLE_PARTS="${TITLE_PARTS}facet to $FACET_VERSION"
+          fi
           echo "pr_title=chore: update $TITLE_PARTS" >> "$GITHUB_OUTPUT"
 
           # Use a delimiter for multiline output
