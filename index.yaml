@@ -41613,6 +41613,53 @@ entries:
     version: 1.0.3
   mission-control:
   - apiVersion: v2
+    appVersion: 0.1.340-beta.63
+    created: "2026-10-15T12:49:12.630550807Z"
+    dependencies:
+    - condition: apm-hub.enabled
+      name: apm-hub
+      repository: https://flanksource.github.io/charts
+      version: '>= 0.0.20'
+    - name: config-db
+      repository: https://flanksource.github.io/charts
+      version: 0.0.1479
+    - name: canary-checker
+      repository: https://flanksource.github.io/charts
+      version: 1.2.0
+    - condition: flanksource-ui.enabled
+      name: flanksource-ui
+      repository: https://flanksource.github.io/charts
+      version: 1.4.342
+    - condition: kratos.enabled
+      import-values:
+      - child: secret
+        parent: kratossecret
+      name: kratos
+      repository: https://k8s.ory.sh/helm/charts
+      version: 0.60.1
+    - condition: views.kubernetes
+      name: mission-control-kubernetes-view
+      repository: https://flanksource.github.io/charts
+      version: '>= 0.1.39'
+    - condition: mission-control-misc-playbooks.enabled
+      name: mission-control-misc-playbooks
+      repository: https://flanksource.github.io/charts
+      version: 0.1.2
+    - condition: facet.enabled
+      name: facet
+      repository: https://flanksource.github.io/charts
+      version: 0.1.73
+    description: A Helm chart for flanksource mission control
+    digest: dc7664a6ec32ed226829fc6c6b30bacdaf5d50a9a4aee10aaa6f1b3f002b26ec
+    icon: https://github.com/flanksource.png
+    maintainers:
+    - name: Flanksource
+    name: mission-control
+    type: application
+    urls:
+    - mission-control-0.1.340-beta.63.tgz
+    version: 0.1.340-beta.63
+  - apiVersion: v2
     appVersion: 0.1.340-beta.62
     created: "2026-10-15T12:31:54.785064961Z"
     dependencies:
@@ -197686,6 +197733,30 @@ entries:
     version: 0.1.31
   mission-control-agent:
   - apiVersion: v2
+    appVersion: 0.1.340-beta.63
+    created: "2026-10-15T12:49:12.645686937Z"
+    dependencies:
+    - name: config-db
+      repository: https://flanksource.github.io/charts
+      version: 0.0.1479
+    - name: canary-checker
+      repository: https://flanksource.github.io/charts
+      version: 1.2.0
+    - alias: pushTelemetry
+      condition: pushTelemetry.enabled
+      name: mission-control-watchtower
+      repository: https://flanksource.github.io/charts
+      version: 0.1.35-beta.4
+    description: A Helm chart for flanksource mission control agent
+    digest: cfc611be0713c818165806fb07812464b292b4baa3c5f80062e3a3c62f719926
+    maintainers:
+    - name: Flanksource
+    name: mission-control-agent
+    type: application
+    urls:
+    - mission-control-agent-0.1.340-beta.63.tgz
+    version: 0.1.340-beta.63
+  - apiVersion: v2
     appVersion: 0.1.340-beta.62
     created: "2026-10-15T12:32:16.456692028Z"
     dependencies:
@@ -289895,6 +289966,18 @@ entries:
     version: 0.1.1-beta.1
   mission-control-crds:
   - apiVersion: v2
+    appVersion: 0.1.340-beta.63
+    created: "2026-10-15T12:49:12.657091261Z"
+    description: A Helm chart for all flanksource mission control CRD's
+    digest: 6ba0bc7a3d723af5c24d83a34d89bb8be67f96a0c0966a0ea8eb31295a3e8ef1
+    maintainers:
+    - name: Flanksource
+    name: mission-control-crds
+    type: application
+    urls:
+    - mission-control-crds-0.1.340-beta.63.tgz
+    version: 0.1.340-beta.63
+  - apiVersion: v2
     appVersion: 0.1.340-beta.62
     created: "2026-10-15T12:32:22.644087977Z"
     description: A Helm chart for all flanksource mission control CRD's
@@ -326931,4 +327014,4 @@ entries:
     urls:
     - docs/postgres-1.0.5.tgz
     version: 1.0.5
-generated: "2026-10-15T12:31:20.856761131Z"
+generated: "2026-10-15T12:49:12.605396978Z"
