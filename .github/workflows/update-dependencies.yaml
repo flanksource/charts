@@ -148,6 +148,20 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
+      - uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4.3.0
+        if: steps.update.outputs.changed == 'true'
+
+      # This workflow runs on the gh-pages push, minutes before GitHub Pages
+      # serves the new index.yaml. Wait for it so the PR's CI can resolve the
+      # bumped versions, and regenerate Chart.lock to match.
+      - name: Wait for charts to be indexed
+        if: steps.update.outputs.changed == 'true'
+        working-directory: mission-control-chart
+        run: |
+          helm repo add flanksource https://flanksource.github.io/charts
+          helm repo add ory https://k8s.ory.sh/helm/charts
+          TIMEOUT=900 bash scripts/wait-for-charts.sh ./chart ./agent-chart
+
       - name: Create PR
         if: steps.update.outputs.changed == 'true'
         env:
@@ -158,7 +172,7 @@ jobs:
           git config user.name "flankbot"
           git config user.email "flankbot@flanksource.com"
           git checkout -b "$BRANCH"
-          git add chart/Chart.yaml agent-chart/Chart.yaml
+          git add chart/Chart.yaml agent-chart/Chart.yaml chart/Chart.lock agent-chart/Chart.lock
           git commit -m "${{ steps.update.outputs.pr_title }}"
           git push origin "$BRANCH"
           gh pr create \
