@@ -80,9 +80,9 @@ jobs:
               continue
             fi
 
-            # Resolve the conflict by regenerating index.yaml
-            git checkout origin/$default_branch -- index.yaml
-            helm repo index --merge index.yaml .
+            # Resolve the conflict by regenerating index.yaml from the packages
+            # in the merged tree, so entries for deleted packages are dropped
+            helm repo index .
 
             git add index.yaml
             git commit -m "chore: merge $default_branch and regenerate index.yaml"
